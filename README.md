@@ -4,6 +4,12 @@ Misc. personal customization files.
 
 ## Contents
 
+- Zsh
+  - [Installation walkthrough](https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/)
+  
+
+
+
 - Customized Keyboards
   - Setups:
     - English Academic (including diacritical marks for Islamicate langauges);
