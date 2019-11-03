@@ -1,6 +1,6 @@
 # Dot Files
 
-Misc. personal customization files.
+Misc. personal customization files. ([Example system](https://github.com/iamlemec/dotfiles).)
 
 Coordinate between machines by symlinking the files to the right place, e.g. `ln -s dotfiles/.bash_profile .bash_profile`
 
