@@ -2,6 +2,8 @@
 
 Misc. personal customization files.
 
+Coordinate between machines by symlinking the files to the right place, e.g. `ln -s dotfiles/.bash_profile .bash_profile`
+
 ## Contents
 
 - Zsh
