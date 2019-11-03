@@ -4,14 +4,12 @@ Misc. personal customization files. ([Example system](https://github.com/iamleme
 
 Coordinate between machines by symlinking the files to the right place, e.g. `ln -s dotfiles/.bash_profile .bash_profile`
 
-## Contents
+## Customizing Checklist
 
 - Zsh
   - [Installation walkthrough](https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/)
-  
 
-
-
+- [Brill Typeface](https://brill.com/page/BrillFont/brill-typeface)
 - Customized Keyboards
   - Setups:
     - English Academic (including diacritical marks for Islamicate langauges);
