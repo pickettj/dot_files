@@ -12,6 +12,7 @@ Coordinate between machines by symlinking the files to the right place, e.g. `ln
     - oh-my-zsh controls [themes](https://github.com/robbyrussell/oh-my-zsh/wiki/themes) and [aliases](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet)
   - Zsh has a configuration file (`.zshrc`), which controls shell configuration and aliases, more or less equivalent to the `bash_profile`. It also has ``.zshenv`,  which sets various environment variables.  
     - ([Lengthy explanation](https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout) of the difference between the two kinds of dot files.)
+- Organize Dock with extra spaces: `defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall`
 
 - [Brill Typeface](https://brill.com/page/BrillFont/brill-typeface)
 - Customized Keyboards
