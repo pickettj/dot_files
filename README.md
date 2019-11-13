@@ -6,16 +6,24 @@ Coordinate between machines by symlinking the files to the right place, e.g. `ln
 
 ## Customizing Checklist
 
+### Command Line
+
 - Zsh
   - [Installation walkthrough](https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/)
   - oh-my-zsh is an essential configuration manager for Zsh, should be installed at the same time.
     - oh-my-zsh controls [themes](https://github.com/robbyrussell/oh-my-zsh/wiki/themes) and [aliases](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet)
-  - Zsh has a configuration file (`.zshrc`), which controls shell configuration and aliases, more or less equivalent to the `bash_profile`. It also has ``.zshenv`,  which sets various environment variables.  
+  - Zsh has a configuration file (`.zshrc`), which controls shell configuration and aliases, more or less equivalent to the `bash_profile`. It also has `.zshenv`,  which sets various environment variables.  
     - ([Lengthy explanation](https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout) of the difference between the two kinds of dot files.)
+
+### Mac OS
+
 - Organize Dock with extra spaces: `defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall`
+- Display all dot files in Finder:`defaults write com.apple.Finder AppleShowAllFiles true; killall Finder`
+
+### Customization Files
 
 - [Brill Typeface](https://brill.com/page/BrillFont/brill-typeface)
-- Customized Keyboards
+- [Customized Keyboards](https://github.com/pickettj/dot_files/tree/master/custom_keyboard_layouts)
   - Setups:
     - English Academic (including diacritical marks for Islamicate langauges);
     - Persianate (Arabic, Persian, Urdu, Uyghur from the same keyboard);
