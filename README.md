@@ -1,8 +1,17 @@
-# Dot Files
+# Customization
 
-Misc. personal customization files. ([Example system](https://github.com/iamlemec/dotfiles).)
+Misc. personal customization files.
 
-Coordinate between machines by symlinking the files to the right place, e.g. `ln -s dotfiles/.bash_profile .bash_profile`
+
+## Dotfiles
+
+- Methods for coordinating dotfiles between machines:
+  - Coordinate between machines by [symlinking](https://www.cyberciti.biz/faq/creating-soft-link-or-symbolic-link/) the files to the right place, e.g. `ln -s dotfiles/.bash_profile .bash_profile`
+  - [Rsync method](https://medium.com/free-code-camp/dive-into-dotfiles-part-2-6321b4a73608): `rsync . ~`. This copies the contents of the source (the current directory: .) to the destination (the home directory: ~); note `--exclude` flag to only move some files.
+- [Atom dotfiles](http://jbranchaud.github.io/splitting-atoms/adding-atom-to-dotfiles.html)
+- [Example setups](https://dotfiles.github.io/):
+  - [iamlemec](https://github.com/iamlemec/dotfiles)
+  - [nicksp](ln -sv ~/Projects/dotfiles/.bash_profile): Mac OS (incl. Atom, iterm)
 
 ## Customizing Checklist
 
