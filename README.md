@@ -6,7 +6,7 @@ Misc. personal customization files.
 ## Dotfiles
 
 - Methods for coordinating dotfiles between machines:
-  - Coordinate between machines by [symlinking](https://www.cyberciti.biz/faq/creating-soft-link-or-symbolic-link/) the files to the right place, e.g. `ln -s dotfiles/.bash_profile .bash_profile`
+  - Coordinate between machines by [symlinking](https://www.cyberciti.biz/faq/creating-soft-link-or-symbolic-link/) the files to the right place, e.g. `ln -s ~/Projects/dot_files/.bash_profile .bash_profile`
   - [Rsync method](https://medium.com/free-code-camp/dive-into-dotfiles-part-2-6321b4a73608): `rsync . ~`. This copies the contents of the source (the current directory: .) to the destination (the home directory: ~); note `--exclude` flag to only move some files.
 - [Atom dotfiles](http://jbranchaud.github.io/splitting-atoms/adding-atom-to-dotfiles.html)
 - [Example setups](https://dotfiles.github.io/):
