@@ -1,0 +1,32 @@
+# Bash Profile modfications shared across machines
+
+# Allows for common bash profile synced via Box
+## https://natelandau.com/my-mac-osx-bash_profile/
+
+# Essential command for customizing bash:
+## export to set environment variables
+## alias for shorthand commands, like I define e to launch my editor
+## source to run scripts of bash commands
+
+
+# Yellow Lightning Bolt Prompt
+## http://tutorials.jumpstartlab.com/academy/workshops/terminal_and_editor.html
+export PS1="\W \[\033[0;33m\]⚡\[\033[0;39m\] "
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+# Setting up Sublime command line prompt: https://www.sublimetext.com/docs/3/osx_command_line.html
+
+
+# Aliases: Commands
+# Use "a" and a folder/file to launch Atom
+alias a="atom $1"
+
+
+# Aliases: Folders
+alias scnd="cd ~/Box\ Sync/Notes/Secondary\ Works"
+
+
+# Enable git's tab-completion library
+## https://medium.com/@dilankam/enable-auto-completion-of-git-commands-on-mac-os-mojave-10-14-2d692c100bc
+source /usr/local/etc/bash_completion.d/git-completion.bash
