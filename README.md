@@ -40,3 +40,8 @@ Misc. personal customization files.
   - Setup (Mac OS):
     - Copy to `Library/Keyboard Layouts`
     - Keyboard Preferences > Add > find in "Others" folder at bottom.
+- Zotero:
+  - Pref/Advanced/Shortcuts: Cmd+Shift+W for citation.
+    - Pref/Export must be on Chicago Full Note.
+  - Install [Better Bibtex](https://retorque.re/zotero-better-bibtex/installation/) for MarkDown citations.
+  - Install [ZotFile](http://zotfile.com/) to control which folder automatic downloads go into.
