@@ -11,7 +11,7 @@ Misc. personal customization files.
 - [Atom dotfiles](http://jbranchaud.github.io/splitting-atoms/adding-atom-to-dotfiles.html)
 - [Example setups](https://dotfiles.github.io/):
   - [iamlemec](https://github.com/iamlemec/dotfiles)
-  - [nicksp](ln -sv ~/Projects/dotfiles/.bash_profile): Mac OS (incl. Atom, iterm)
+  - [nicksp](https://github.com/nicksp/dotfiles): Mac OS (incl. Atom, iterm)
 
 ## Customizing Checklist
 
