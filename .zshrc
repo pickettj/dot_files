@@ -86,6 +86,11 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
+export EDITOR=/usr/bin/nano
+
+export VISUAL=/usr/bin/nano
+
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
