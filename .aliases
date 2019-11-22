@@ -1,0 +1,9 @@
+# Aliases called by either Zsh or Bash dotfiles
+
+# Load files in Atom from command line more quickly:
+alias a="atom"
+
+
+# Directory Jumps
+## Switch to projects
+alias proj="$HOME/Projects"
