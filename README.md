@@ -34,6 +34,10 @@ Misc. personal customization files.
 - Organize Dock with extra spaces: `defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall`
 - Display all dot files in Finder:`defaults write com.apple.Finder AppleShowAllFiles true; killall Finder`
 
+### [Dashboard](https://github.com/pickettj/dot_files/tree/master/Dashboard)
+
+- Relative links transferable between machines: `ln -s ../../../Box`
+
 ### Customization Files
 
 - [Brill Typeface](https://brill.com/page/BrillFont/brill-typeface)
