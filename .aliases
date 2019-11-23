@@ -4,6 +4,12 @@
 alias a="atom"
 
 
+# Git
+## Git add all, then commit
+alias gac="git add -A && git commit"
+
+
+
 # Directory Jumps
 ## Switch to projects
 alias proj="$HOME/Projects"
