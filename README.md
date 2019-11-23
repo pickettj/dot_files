@@ -29,6 +29,12 @@ Misc. personal customization files.
   - Walkthrough for [iTerm2 profile syncing](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
 
 
+### Workflow
+
+- Alfred (w/ Powerpack)
+  - [Zothero](https://github.com/deanishe/zothero): Citation wizard.
+
+
 ### Mac OS
 
 - Organize Dock with extra spaces: `defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall`
