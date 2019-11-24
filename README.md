@@ -31,8 +31,12 @@ Misc. personal customization files.
 
 ### Workflow
 
-- Alfred (w/ Powerpack)
+- [Alfred](https://www.alfredapp.com/workflows/) (w/ Powerpack)
   - [Zothero](https://github.com/deanishe/zothero): Citation wizard.
+  - [Anki](https://github.com/bikenik/alfred-anki)
+  - [Advanced Google Maps](http://www.packal.org/workflow/advanced-google-and-apple-maps-search)
+    - Extra install: 'brew cask install corelocationcli'
+  - [StackExchange Search](https://github.com/deanishe/alfred-stackoverflow)
 
 
 ### Mac OS
