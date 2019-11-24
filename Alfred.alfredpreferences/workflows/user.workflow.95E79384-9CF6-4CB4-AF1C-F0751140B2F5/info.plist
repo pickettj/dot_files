@@ -4,6 +4,8 @@
 <dict>
 	<key>bundleid</key>
 	<string>com.stuartryan.alfred.lastpass</string>
+	<key>category</key>
+	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
 		<key>01DFFE0F-13AB-4E19-AC39-8E2177548224</key>
@@ -335,6 +337,14 @@ end if</string>
 				<integer>0</integer>
 				<key>argument</key>
 				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -385,7 +395,7 @@ end if</string>
 			<key>uid</key>
 			<string>815177FB-CED1-42F3-AC5B-C1AC60735FA1</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -461,6 +471,12 @@ print $results;
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -606,7 +622,7 @@ exit 0;</string>
 			<key>uid</key>
 			<string>29656ADA-02CB-48FC-BC0E-20376CF8D8EF</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -614,6 +630,14 @@ exit 0;</string>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
 				<integer>0</integer>
 				<key>leftcursor</key>
 				<false/>
@@ -716,7 +740,7 @@ print $results;
 			<key>uid</key>
 			<string>201D2F2C-024E-4FA6-8B0C-CF32974E5077</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>

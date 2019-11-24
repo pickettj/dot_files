@@ -4,6 +4,8 @@
 <dict>
 	<key>bundleid</key>
 	<string>persian_multisearch</string>
+	<key>category</key>
+	<string>Language</string>
 	<key>connections</key>
 	<dict>
 		<key>F8C5D133-7C4D-44F2-845B-FAE1568A09E7</key>
@@ -41,6 +43,39 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>5D4164DB-F709-40D4-A8CE-6B632DD39D81</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FA38522D-1D3F-4D03-B57A-5ECAC0DF991D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E281B7B7-B744-4C95-83FE-59E5E91E7DCE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>80370257-9E8A-48D0-A814-C521F23FDC53</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>08CDF7D0-6E98-4748-995B-C822EA0E3A62</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -112,6 +147,27 @@
 			<string>alfred.workflow.action.systemwebsearch</string>
 			<key>uid</key>
 			<string>80370257-9E8A-48D0-A814-C521F23FDC53</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>یاب</string>
+				<key>subtext</key>
+				<string>Persian-script keyword trigger</string>
+				<key>text</key>
+				<string>Persian search</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>FA38522D-1D3F-4D03-B57A-5ECAC0DF991D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -192,6 +248,13 @@
 			<integer>50</integer>
 			<key>ypos</key>
 			<integer>180</integer>
+		</dict>
+		<key>FA38522D-1D3F-4D03-B57A-5ECAC0DF991D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>15</integer>
+			<key>ypos</key>
+			<integer>330</integer>
 		</dict>
 	</dict>
 	<key>version</key>
