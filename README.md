@@ -37,6 +37,7 @@ Misc. personal customization files.
   - [Advanced Google Maps](http://www.packal.org/workflow/advanced-google-and-apple-maps-search)
     - Extra install: 'brew cask install corelocationcli'
   - [StackExchange Search](https://github.com/deanishe/alfred-stackoverflow)
+  - [iTerm integration](https://github.com/stuartcryan/custom-iterm-applescripts-for-alfred)
 
 
 ### Mac OS
