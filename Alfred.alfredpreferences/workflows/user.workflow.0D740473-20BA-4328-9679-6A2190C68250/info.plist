@@ -2916,7 +2916,7 @@
 	<key>description</key>
 	<string>Control your Spotify library at your fingertips</string>
 	<key>disabled</key>
-	<true/>
+	<false/>
 	<key>name</key>
 	<string>Spotify Mini Player</string>
 	<key>objects</key>
