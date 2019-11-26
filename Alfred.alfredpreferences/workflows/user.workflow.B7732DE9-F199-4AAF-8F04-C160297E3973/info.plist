@@ -451,6 +451,26 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DB25CEE4-F531-4AEF-8AF0-71ACD12EF652</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>English search</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>1CB6F25C-0955-40CC-A424-A15AD70E5EC8</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>English search</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>EF6C2148-12FC-43DA-ABAF-A362DABDB7E6</key>
 		<array>
@@ -1115,6 +1135,44 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string>%20</string>
+				<key>url</key>
+				<string>https://translate.google.com/?text=arabic#view=home&amp;op=translate&amp;sl=en&amp;tl=ar&amp;text={query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>DB25CEE4-F531-4AEF-8AF0-71ACD12EF652</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string>+</string>
+				<key>url</key>
+				<string>https://context.reverso.net/translation/english-arabic/{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>1CB6F25C-0955-40CC-A424-A15AD70E5EC8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -1141,6 +1199,13 @@
 			<key>ypos</key>
 			<integer>155</integer>
 		</dict>
+		<key>1CB6F25C-0955-40CC-A424-A15AD70E5EC8</key>
+		<dict>
+			<key>xpos</key>
+			<integer>150</integer>
+			<key>ypos</key>
+			<integer>750</integer>
+		</dict>
 		<key>2E914B80-9ADE-43DA-862D-FACCD35DBC9A</key>
 		<dict>
 			<key>xpos</key>
@@ -1158,9 +1223,9 @@
 		<key>47621D89-56C7-4964-BC59-E6D729B76971</key>
 		<dict>
 			<key>xpos</key>
-			<integer>305</integer>
+			<integer>285</integer>
 			<key>ypos</key>
-			<integer>465</integer>
+			<integer>460</integer>
 		</dict>
 		<key>50ECBEC2-2F23-4726-90F1-39099142C922</key>
 		<dict>
@@ -1329,6 +1394,13 @@
 			<integer>525</integer>
 			<key>ypos</key>
 			<integer>270</integer>
+		</dict>
+		<key>DB25CEE4-F531-4AEF-8AF0-71ACD12EF652</key>
+		<dict>
+			<key>xpos</key>
+			<integer>210</integer>
+			<key>ypos</key>
+			<integer>595</integer>
 		</dict>
 		<key>DFB655E1-6345-4CE2-A377-B7746DBC4800</key>
 		<dict>

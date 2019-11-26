@@ -50,6 +50,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4C26B42D-40C1-436A-8F25-384DC094052F</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>FA38522D-1D3F-4D03-B57A-5ECAC0DF991D</key>
 		<array>
@@ -117,27 +127,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>pers</string>
-				<key>subtext</key>
-				<string>Dehkhoda, Steingass, Google Translate</string>
-				<key>text</key>
-				<string>Persian Multi-Search</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>F8C5D133-7C4D-44F2-845B-FAE1568A09E7</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>searcher</key>
@@ -147,27 +136,6 @@
 			<string>alfred.workflow.action.systemwebsearch</string>
 			<key>uid</key>
 			<string>80370257-9E8A-48D0-A814-C521F23FDC53</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>یاب</string>
-				<key>subtext</key>
-				<string>Persian-script keyword trigger</string>
-				<key>text</key>
-				<string>Persian search</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>FA38522D-1D3F-4D03-B57A-5ECAC0DF991D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -209,6 +177,67 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>pers</string>
+				<key>subtext</key>
+				<string>Dehkhoda, Steingass, Google Translate</string>
+				<key>text</key>
+				<string>Persian Multi-Search</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F8C5D133-7C4D-44F2-845B-FAE1568A09E7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>یاب</string>
+				<key>subtext</key>
+				<string>Persian-script keyword trigger</string>
+				<key>text</key>
+				<string>Persian search</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>FA38522D-1D3F-4D03-B57A-5ECAC0DF991D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string>%20</string>
+				<key>url</key>
+				<string>https://translate.google.com/#view=home&amp;op=translate&amp;sl=en&amp;tl=fa&amp;text={query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>4C26B42D-40C1-436A-8F25-384DC094052F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Created by the Alfred team!</string>
@@ -217,30 +246,37 @@
 		<key>08CDF7D0-6E98-4748-995B-C822EA0E3A62</key>
 		<dict>
 			<key>xpos</key>
-			<integer>450</integer>
+			<integer>380</integer>
 			<key>ypos</key>
-			<integer>385</integer>
+			<integer>155</integer>
+		</dict>
+		<key>4C26B42D-40C1-436A-8F25-384DC094052F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>245</integer>
+			<key>ypos</key>
+			<integer>445</integer>
 		</dict>
 		<key>5D4164DB-F709-40D4-A8CE-6B632DD39D81</key>
 		<dict>
 			<key>xpos</key>
-			<integer>260</integer>
+			<integer>535</integer>
 			<key>ypos</key>
-			<integer>475</integer>
+			<integer>170</integer>
 		</dict>
 		<key>80370257-9E8A-48D0-A814-C521F23FDC53</key>
 		<dict>
 			<key>xpos</key>
-			<integer>460</integer>
+			<integer>525</integer>
 			<key>ypos</key>
-			<integer>210</integer>
+			<integer>25</integer>
 		</dict>
 		<key>E281B7B7-B744-4C95-83FE-59E5E91E7DCE</key>
 		<dict>
 			<key>xpos</key>
-			<integer>330</integer>
+			<integer>390</integer>
 			<key>ypos</key>
-			<integer>40</integer>
+			<integer>10</integer>
 		</dict>
 		<key>F8C5D133-7C4D-44F2-845B-FAE1568A09E7</key>
 		<dict>
