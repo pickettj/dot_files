@@ -2233,12 +2233,14 @@ Edit the `ZOTERO_DIR` variable to point to Zotero 5's data directory if you aren
 		<key>ATTACHMENTS_DIR</key>
 		<string></string>
 		<key>CITE_STYLE</key>
-		<string></string>
+		<string>http://www.zotero.org/styles/chicago-fullnote-bibliography</string>
 		<key>LOCALE</key>
 		<string></string>
 		<key>ZOTERO_DIR</key>
 		<string></string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
 	<string>1.2.2</string>
 	<key>webaddress</key>

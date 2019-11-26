@@ -38,6 +38,7 @@ Misc. personal customization files.
     - Extra install: 'brew cask install corelocationcli'
   - [StackExchange Search](https://github.com/deanishe/alfred-stackoverflow)
   - [iTerm integration](https://github.com/stuartcryan/custom-iterm-applescripts-for-alfred)
+  - [Calendar](https://github.com/deanishe/alfred-gcal)
 
 
 ### Mac OS

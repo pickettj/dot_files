@@ -8,6 +8,19 @@
 	<string>Academic</string>
 	<key>connections</key>
 	<dict>
+		<key>2CCE4480-C84D-439A-8ACA-11E8802A0611</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F21EFDC3-C9AC-43B7-B837-22B47F537DC9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>68ECEFF4-170D-45D6-970A-EC3BBDAA2216</key>
 		<array>
 			<dict>
@@ -40,6 +53,19 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DBC87892-28F6-4354-825D-DD79BB127ACB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BE524FBA-B47B-49F4-A45D-91A884065D66</key>
+		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>DBC87892-28F6-4354-825D-DD79BB127ACB</string>
@@ -414,6 +440,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>jstor</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>JSTOR</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2CCE4480-C84D-439A-8ACA-11E8802A0611</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
@@ -430,6 +477,27 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>libgen</string>
+				<key>subtext</key>
+				<string>Free books</string>
+				<key>text</key>
+				<string>Libgen</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>BE524FBA-B47B-49F4-A45D-91A884065D66</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -441,6 +509,13 @@
 			<integer>610</integer>
 			<key>ypos</key>
 			<integer>10</integer>
+		</dict>
+		<key>2CCE4480-C84D-439A-8ACA-11E8802A0611</key>
+		<dict>
+			<key>xpos</key>
+			<integer>35</integer>
+			<key>ypos</key>
+			<integer>410</integer>
 		</dict>
 		<key>533124A1-7CD5-4C1C-8BBD-D1E38CCEBD5F</key>
 		<dict>
@@ -497,6 +572,13 @@
 			<integer>470</integer>
 			<key>ypos</key>
 			<integer>125</integer>
+		</dict>
+		<key>BE524FBA-B47B-49F4-A45D-91A884065D66</key>
+		<dict>
+			<key>xpos</key>
+			<integer>390</integer>
+			<key>ypos</key>
+			<integer>555</integer>
 		</dict>
 		<key>D2A2696B-1BD2-4939-B70A-9A59825085C5</key>
 		<dict>
