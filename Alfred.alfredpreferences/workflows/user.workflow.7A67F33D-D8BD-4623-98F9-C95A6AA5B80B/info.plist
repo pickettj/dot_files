@@ -4,6 +4,8 @@
 <dict>
 	<key>bundleid</key>
 	<string>com.jason0x43.alfred-weather</string>
+	<key>category</key>
+	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
 		<key>2D2CAE4A-DA46-43E8-970D-B8BCA6A02378</key>

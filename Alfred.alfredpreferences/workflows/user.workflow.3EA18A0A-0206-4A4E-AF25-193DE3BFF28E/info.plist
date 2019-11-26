@@ -40,6 +40,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DBC87892-28F6-4354-825D-DD79BB127ACB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>D943A106-495F-422D-B8E5-880452EC52F1</key>
 		<array>
@@ -66,6 +76,16 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>F21EFDC3-C9AC-43B7-B837-22B47F537DC9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DBC87892-28F6-4354-825D-DD79BB127ACB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -109,6 +129,16 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>AF85A882-5840-4094-9307-B622088B549F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DBC87892-28F6-4354-825D-DD79BB127ACB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -368,6 +398,25 @@
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
+				<string>+</string>
+				<key>url</key>
+				<string>https://b-ok.cc/s/?q={query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>DBC87892-28F6-4354-825D-DD79BB127ACB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>https://ezb.relaisd2d.com/?LS=PITT</string>
@@ -462,6 +511,13 @@
 			<integer>30</integer>
 			<key>ypos</key>
 			<integer>35</integer>
+		</dict>
+		<key>DBC87892-28F6-4354-825D-DD79BB127ACB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>455</integer>
+			<key>ypos</key>
+			<integer>365</integer>
 		</dict>
 		<key>DBCB315F-879D-4112-8270-DE17A8BCEFBA</key>
 		<dict>
