@@ -8,6 +8,32 @@
 	<string>Academic</string>
 	<key>connections</key>
 	<dict>
+		<key>1014D102-60BE-4D28-9A00-237D819725D5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D2A2696B-1BD2-4939-B70A-9A59825085C5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>14B03805-A35E-4B11-9FF8-CBD6CAF38D13</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7E65A52D-16BC-446E-8752-505287795207</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>2CCE4480-C84D-439A-8ACA-11E8802A0611</key>
 		<array>
 			<dict>
@@ -112,6 +138,16 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>DBC87892-28F6-4354-825D-DD79BB127ACB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4907900A-2530-4D91-830C-71592D726876</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -440,6 +476,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string>+</string>
+				<key>url</key>
+				<string>https://www.academia.edu/people/search?utf8=%E2%9C%93&amp;q={query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>4907900A-2530-4D91-830C-71592D726876</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
@@ -483,6 +538,48 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
+				<string>catp</string>
+				<key>subtext</key>
+				<string>Search only in PittCat</string>
+				<key>text</key>
+				<string>PittCat</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>14B03805-A35E-4B11-9FF8-CBD6CAF38D13</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>wrld</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>WorldCat</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>1014D102-60BE-4D28-9A00-237D819725D5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
 				<string>libgen</string>
 				<key>subtext</key>
 				<string>Free books</string>
@@ -510,12 +607,33 @@
 			<key>ypos</key>
 			<integer>10</integer>
 		</dict>
+		<key>1014D102-60BE-4D28-9A00-237D819725D5</key>
+		<dict>
+			<key>xpos</key>
+			<integer>405</integer>
+			<key>ypos</key>
+			<integer>555</integer>
+		</dict>
+		<key>14B03805-A35E-4B11-9FF8-CBD6CAF38D13</key>
+		<dict>
+			<key>xpos</key>
+			<integer>35</integer>
+			<key>ypos</key>
+			<integer>520</integer>
+		</dict>
 		<key>2CCE4480-C84D-439A-8ACA-11E8802A0611</key>
 		<dict>
 			<key>xpos</key>
 			<integer>35</integer>
 			<key>ypos</key>
 			<integer>410</integer>
+		</dict>
+		<key>4907900A-2530-4D91-830C-71592D726876</key>
+		<dict>
+			<key>xpos</key>
+			<integer>650</integer>
+			<key>ypos</key>
+			<integer>365</integer>
 		</dict>
 		<key>533124A1-7CD5-4C1C-8BBD-D1E38CCEBD5F</key>
 		<dict>
@@ -541,7 +659,7 @@
 		<key>7E65A52D-16BC-446E-8752-505287795207</key>
 		<dict>
 			<key>xpos</key>
-			<integer>315</integer>
+			<integer>285</integer>
 			<key>ypos</key>
 			<integer>10</integer>
 		</dict>
@@ -576,14 +694,14 @@
 		<key>BE524FBA-B47B-49F4-A45D-91A884065D66</key>
 		<dict>
 			<key>xpos</key>
-			<integer>390</integer>
+			<integer>205</integer>
 			<key>ypos</key>
-			<integer>555</integer>
+			<integer>560</integer>
 		</dict>
 		<key>D2A2696B-1BD2-4939-B70A-9A59825085C5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>315</integer>
+			<integer>300</integer>
 			<key>ypos</key>
 			<integer>125</integer>
 		</dict>

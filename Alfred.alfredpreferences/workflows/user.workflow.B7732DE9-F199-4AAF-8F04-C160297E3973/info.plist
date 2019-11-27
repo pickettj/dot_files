@@ -87,6 +87,16 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>27518E47-A339-40FB-9042-9CE906EE1E04</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>BB6C55B8-3CC9-4C92-A22F-3897095D636B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -118,6 +128,16 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>47621D89-56C7-4964-BC59-E6D729B76971</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7F8AD1B2-1AB8-4A2F-85C9-0A2AB234BC0B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -413,6 +433,16 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>27518E47-A339-40FB-9042-9CE906EE1E04</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>BB6C55B8-3CC9-4C92-A22F-3897095D636B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -458,6 +488,16 @@
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string>English search</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7F8AD1B2-1AB8-4A2F-85C9-0A2AB234BC0B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -580,6 +620,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://www.almaany.com/ar/dict/ar-ar/{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>27518E47-A339-40FB-9042-9CE906EE1E04</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>matchmode</key>
 				<integer>0</integer>
 				<key>matchstring</key>
@@ -642,27 +701,6 @@
 			<string>EF6C2148-12FC-43DA-ABAF-A362DABDB7E6</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>ara</string>
-				<key>subtext</key>
-				<string>English-script trigger</string>
-				<key>text</key>
-				<string>Arabic Multi-Search</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>E6113F6E-C387-46AD-B19F-8D8BCD7C8AE5</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -784,6 +822,27 @@
 			<string>60E1F0C6-9409-4DC8-9402-4037E5C91D0E</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ara</string>
+				<key>subtext</key>
+				<string>English-script trigger</string>
+				<key>text</key>
+				<string>Arabic Multi-Search</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E6113F6E-C387-46AD-B19F-8D8BCD7C8AE5</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1157,6 +1216,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>7F8AD1B2-1AB8-4A2F-85C9-0A2AB234BC0B</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
@@ -1205,6 +1281,13 @@
 			<integer>150</integer>
 			<key>ypos</key>
 			<integer>750</integer>
+		</dict>
+		<key>27518E47-A339-40FB-9042-9CE906EE1E04</key>
+		<dict>
+			<key>xpos</key>
+			<integer>85</integer>
+			<key>ypos</key>
+			<integer>15</integer>
 		</dict>
 		<key>2E914B80-9ADE-43DA-862D-FACCD35DBC9A</key>
 		<dict>
@@ -1275,6 +1358,13 @@
 			<integer>525</integer>
 			<key>ypos</key>
 			<integer>550</integer>
+		</dict>
+		<key>7F8AD1B2-1AB8-4A2F-85C9-0A2AB234BC0B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>415</integer>
+			<key>ypos</key>
+			<integer>655</integer>
 		</dict>
 		<key>8E84AD94-F0D9-43BE-80C3-03689422BA1B</key>
 		<dict>
@@ -1426,9 +1516,9 @@
 		<key>E6113F6E-C387-46AD-B19F-8D8BCD7C8AE5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>30</integer>
+			<integer>25</integer>
 			<key>ypos</key>
-			<integer>90</integer>
+			<integer>200</integer>
 		</dict>
 		<key>EF6C2148-12FC-43DA-ABAF-A362DABDB7E6</key>
 		<dict>
