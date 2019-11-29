@@ -39,6 +39,7 @@ Misc. personal customization files.
   - [StackExchange Search](https://github.com/deanishe/alfred-stackoverflow)
   - [iTerm integration](https://github.com/stuartcryan/custom-iterm-applescripts-for-alfred)
   - [Calendar](https://github.com/deanishe/alfred-gcal)
+- [Pandoc](https://pandoc.org/installing.html) document converter
 
 
 ### Mac OS
@@ -66,3 +67,4 @@ Misc. personal customization files.
     - Pref/Export must be on Chicago Full Note.
   - Install [Better Bibtex](https://retorque.re/zotero-better-bibtex/installation/) for MarkDown citations.
   - Install [ZotFile](http://zotfile.com/) to control which folder automatic downloads go into.
+- [Fuzzy Search](https://github.com/iamlemec/fuzzy)
