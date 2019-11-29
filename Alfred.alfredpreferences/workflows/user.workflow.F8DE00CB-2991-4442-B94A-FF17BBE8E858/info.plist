@@ -778,7 +778,7 @@
 	<key>description</key>
 	<string>anki card generator</string>
 	<key>disabled</key>
-	<false/>
+	<true/>
 	<key>name</key>
 	<string>anki</string>
 	<key>objects</key>
