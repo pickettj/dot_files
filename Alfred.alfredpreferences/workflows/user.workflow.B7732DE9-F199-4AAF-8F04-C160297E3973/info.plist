@@ -1202,7 +1202,7 @@
 				<key>spaces</key>
 				<string>%20</string>
 				<key>url</key>
-				<string>https://translate.google.com/?text=arabic#view=home&amp;op=translate&amp;sl=en&amp;tl=ar&amp;text={query}</string>
+				<string>https://translate.google.com/?hl=en&amp;tab=TT#view=home&amp;op=translate&amp;sl=en&amp;tl=ar&amp;text={query}</string>
 				<key>utf8</key>
 				<true/>
 			</dict>

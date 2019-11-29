@@ -13,3 +13,9 @@ alias gac="git add -A && git commit -m"
 # Directory Jumps
 ## Switch to projects
 alias proj="$HOME/Projects"
+
+
+# Quick App Opens
+
+alias dige="open ~/Projects/dot_files/Dashboard/database_digital_eurasia_6.1.fmp12"
+alias pahdic="open ~/Projects/dot_files/Dashboard/pahlavi_dictionary.fmp12"
