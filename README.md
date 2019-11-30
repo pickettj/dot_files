@@ -24,6 +24,7 @@ Misc. personal customization files.
       - Remember to [install font](https://www.fontsquirrel.com/fonts/source-code-pro) for [powerlevel9k theme](https://github.com/Powerlevel9k/powerlevel9k/wiki/Install-Instructions#step-1-install-powerlevel9k) and change iTerm2 (`iTerm2 > Preferences > Profiles > Text > Change Font`)
   - Zsh has a configuration file (`.zshrc`), which controls shell configuration and aliases, more or less equivalent to the `bash_profile`. It also has `.zshenv`,  which sets various environment variables.  
     - ([Lengthy explanation](https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout) of the difference between the two kinds of dot files.)
+    - Anaconda automatically updates the bashprofile; but for zsh, `run conda init zsh`
 - iTerm2
   - Installation: `brew cask install iterm2`
   - Walkthrough for [iTerm2 profile syncing](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)

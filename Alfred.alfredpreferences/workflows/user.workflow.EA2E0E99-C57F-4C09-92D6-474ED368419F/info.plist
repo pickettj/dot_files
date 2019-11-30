@@ -7,7 +7,47 @@
 	<key>category</key>
 	<string>Productivity</string>
 	<key>connections</key>
-	<dict/>
+	<dict>
+		<key>09F8270A-5CF5-46D4-ACB0-FFFADAE75696</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0204C695-0FED-45CF-9B97-24993307DE8B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>4949AF58-421B-4DD2-9449-28C7290513D2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6D639D59-7EA2-4D1A-AF84-30BD13855784</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FBE64852-1717-49C9-B5E4-F3F5A78ACDC7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AE1B271C-B02B-42A7-88D4-B44C0441A065</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
 	<key>createdby</key>
 	<string>James</string>
 	<key>description</key>
@@ -17,11 +57,163 @@
 	<key>name</key>
 	<string>Dashboard</string>
 	<key>objects</key>
-	<array/>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>dige</string>
+				<key>subtext</key>
+				<string>(filemaker)</string>
+				<key>text</key>
+				<string>Digital Eurasia Database</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>FBE64852-1717-49C9-B5E4-F3F5A78ACDC7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>dige</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>AE1B271C-B02B-42A7-88D4-B44C0441A065</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>pahdic</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>6D639D59-7EA2-4D1A-AF84-30BD13855784</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>pahdic</string>
+				<key>subtext</key>
+				<string>(filemaker)</string>
+				<key>text</key>
+				<string>Pahlavi Dictionary</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>4949AF58-421B-4DD2-9449-28C7290513D2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>jyp</string>
+				<key>subtext</key>
+				<string>in preferred directory</string>
+				<key>text</key>
+				<string>Juypter Notebook</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>09F8270A-5CF5-46D4-ACB0-FFFADAE75696</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>jyp</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>0204C695-0FED-45CF-9B97-24993307DE8B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
-	<dict/>
+	<dict>
+		<key>0204C695-0FED-45CF-9B97-24993307DE8B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>280</integer>
+			<key>ypos</key>
+			<integer>300</integer>
+		</dict>
+		<key>09F8270A-5CF5-46D4-ACB0-FFFADAE75696</key>
+		<dict>
+			<key>xpos</key>
+			<integer>55</integer>
+			<key>ypos</key>
+			<integer>300</integer>
+		</dict>
+		<key>4949AF58-421B-4DD2-9449-28C7290513D2</key>
+		<dict>
+			<key>xpos</key>
+			<integer>55</integer>
+			<key>ypos</key>
+			<integer>165</integer>
+		</dict>
+		<key>6D639D59-7EA2-4D1A-AF84-30BD13855784</key>
+		<dict>
+			<key>xpos</key>
+			<integer>280</integer>
+			<key>ypos</key>
+			<integer>165</integer>
+		</dict>
+		<key>AE1B271C-B02B-42A7-88D4-B44C0441A065</key>
+		<dict>
+			<key>xpos</key>
+			<integer>280</integer>
+			<key>ypos</key>
+			<integer>35</integer>
+		</dict>
+		<key>FBE64852-1717-49C9-B5E4-F3F5A78ACDC7</key>
+		<dict>
+			<key>xpos</key>
+			<integer>55</integer>
+			<key>ypos</key>
+			<integer>35</integer>
+		</dict>
+	</dict>
 	<key>webaddress</key>
 	<string></string>
 </dict>
