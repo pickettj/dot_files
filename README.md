@@ -33,8 +33,6 @@ Misc. personal customization files.
 ### Workflow
 
 - [Alfred](https://www.alfredapp.com/workflows/) (w/ Powerpack)
-<<<<<<< HEAD
-=======
   - [Curated list of workflows](https://github.com/derimagia/awesome-alfred-workflows)
   - [Zothero](https://github.com/deanishe/zothero): Citation wizard.
   - [Anki](https://github.com/bikenik/alfred-anki)
