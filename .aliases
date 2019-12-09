@@ -8,11 +8,19 @@ alias a="atom"
 ## Git add all, then commit
 alias gac="git add -A && git commit -m"
 
+# Command Shortcuts
+## list with more information
+alias lst="ls -lsat"
 
 
 # Directory Jumps
 ## Switch to projects
 alias proj="$HOME/Projects"
+
+
+# Processes
+## Login to server
+alias bact="ssh root@bactriana.org"
 
 
 # Quick App Opens
