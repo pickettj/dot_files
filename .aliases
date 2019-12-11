@@ -16,8 +16,8 @@ alias lst="ls -lsat"
 # Directory Jumps
 ## Switch to projects
 alias proj="$HOME/Projects"
-alias teach="$HOME/Teaching"
-alias notes=$HOME/Notes"
+alias teach="$HOME/Box/Teaching"
+alias notes=$HOME/Box/Notes"
 
 
 # Processes
