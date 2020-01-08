@@ -17,7 +17,7 @@ alias lst="ls -lsat"
 ## Switch to projects
 alias proj="$HOME/Projects"
 alias teach="$HOME/Box/Teaching"
-alias notes=$HOME/Box/Notes"
+alias notes="$HOME/Box/Notes"
 
 
 # Processes
