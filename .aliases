@@ -24,6 +24,9 @@ alias notes="$HOME/Box/Notes"
 ## Login to server
 alias bact="ssh root@bactriana.org"
 
+## Workflow: parse everything in markdown folder
+alias md_parse="python ~/Projects/xml_development_eurasia/markdown_parser/markdown_parser_3.0.py"
+
 
 # Quick App Opens
 
@@ -31,3 +34,5 @@ alias dige="open ~/Projects/dot_files/Dashboard/database_digital_eurasia_6.1.fmp
 alias pahdic="open ~/Projects/dot_files/Dashboard/pahlavi_dictionary.fmp12"
 
 alias jyp="jupyter notebook --notebook-dir='~/Projects/jupyter_notebooks'"
+
+alias corpus="jupyter notebook --notebook-dir='~/Projects/eurasia_corpus_tool'"
