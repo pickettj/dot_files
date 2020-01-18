@@ -12,12 +12,16 @@ alias gac="git add -A && git commit -m"
 ## list with more information
 alias lst="ls -lsat"
 
+# Variables for Common Paths
+PROJ=$HOME/Projects
+TEACH=$HOME/Box/Teaching
+NOTES=$HOME/Box/Notes
 
 # Directory Jumps
 ## Switch to projects
-alias proj="$HOME/Projects"
-alias teach="$HOME/Box/Teaching"
-alias notes="$HOME/Box/Notes"
+alias proj="$PROJ"
+alias teach="$TEACH"
+alias notes="$NOTES"
 
 
 # Processes
@@ -30,9 +34,9 @@ alias md_parse="python ~/Projects/xml_development_eurasia/markdown_parser/markdo
 
 # Quick App Opens
 
-alias dige="open ~/Projects/dot_files/Dashboard/database_digital_eurasia_6.1.fmp12"
-alias pahdic="open ~/Projects/dot_files/Dashboard/pahlavi_dictionary.fmp12"
+alias dige="open $NOTES/Digital_Humanities/database_digital_eurasia_6.1.fmp12"
+alias pahdic="open $NOTES/Digital_Humanities/pahlavi_dictionary.fmp12"
 
-alias jyp="jupyter notebook --notebook-dir='~/Projects/jupyter_notebooks'"
+alias jyp="jupyter notebook --notebook-dir='$PROJ/jupyter_notebooks'"
 
-alias corpus="jupyter notebook --notebook-dir='~/Projects/eurasia_corpus_tool'"
+alias corpus="jupyter notebook --notebook-dir='$PROJ/eurasia_corpus_tool'"
