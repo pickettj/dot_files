@@ -17,6 +17,7 @@ PROJ=$HOME/Projects
 TEACH=$HOME/Box/Teaching
 NOTES=$HOME/Box/Notes
 INBOX=$HOME/Box/Inbox
+KITOB=$HOME/Box/Kitob-khona/
 
 # Directory Jumps
 ## Switch to projects
@@ -31,6 +32,13 @@ alias bact="ssh root@bactriana.org"
 
 ## Workflow: parse everything in markdown folder
 alias md_parse="python ~/Projects/xml_development_eurasia/markdown_parser/markdown_parser_3.0.py"
+
+## Open most recently downloaded item
+### The bits between parentheses are glob qualifiers:
+#### om changes the order on globs to use the modification time rather than the name (newest first).
+#### [1] means to use only the first match.
+alias firstin="open $INBOX/*(om[1])"
+alias inpdf="open $INBOX/*.pdf(om[1])"
 
 
 # Quick App Opens
