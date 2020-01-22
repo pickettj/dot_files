@@ -8,6 +8,8 @@ alias a="atom"
 ## Git add all, then commit
 alias gac="git add -A && git commit -m"
 
+alias pull_dir="proj && bash ./dot_files/git_pull_all_dirs.sh"
+
 # Command Shortcuts
 ## list with more information
 alias lst="ls -lsat"
