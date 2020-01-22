@@ -28,6 +28,7 @@ Misc. personal customization files.
 - iTerm2
   - Installation: `brew cask install iterm2`
   - Walkthrough for [iTerm2 profile syncing](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
+- [Fuzzy Finder](https://github.com/junegunn/fzf): interactive Unix filter for command-line that can be used with any list; files, command history, processes, hostnames, bookmarks, git commits, etc.
 
 
 ### Workflow
