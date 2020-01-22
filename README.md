@@ -30,6 +30,10 @@ Misc. personal customization files.
   - Walkthrough for [iTerm2 profile syncing](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
 - [Fuzzy Finder](https://github.com/junegunn/fzf): interactive Unix filter for command-line that can be used with any list; files, command history, processes, hostnames, bookmarks, git commits, etc.
 
+### Git
+
+- [Multi-Git-Status](https://github.com/fboender/multi-git-status/): List status of all repos in a folder.
+
 
 ### Workflow
 
