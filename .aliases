@@ -33,6 +33,12 @@ alias notes="$NOTES"
 ## Login to server
 alias bact="ssh root@bactriana.org"
 
+
+# Manually update Alfred settings
+# currently doesn't work; creates some __MACOSX folder
+#alias alf-up="rm -r $PROJ/Sync/Alfred.alfredpreferences && cp $NOTES/Digital_Humanities/Alfred.alfredpreferences.zip $PROJ/Sync && unzip $PROJ/Sync/Alfred.alfredpreferences.zip"
+
+
 ## Workflow: parse everything in markdown folder
 alias md_parse="python ~/Projects/xml_development_eurasia/markdown_parser/markdown_parser_3.0.py"
 
