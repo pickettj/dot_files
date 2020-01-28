@@ -11,7 +11,7 @@ alias gac="git add -A && git commit -m"
 alias pull_dir="proj && bash ./dot_files/git_pull_all_dirs.sh"
 alias mgitstat="proj && bash ./multi-git-status/mgitstatus"
 
-alias fgit="git add -A && git commit -m "failsafe, adding and committing all" && git push"
+alias fgit="git add -A && git commit -m 'failsafe: adding and committing all' && git push"
 
 # Command Shortcuts
 ## list with more information
