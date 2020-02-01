@@ -3,6 +3,10 @@
 # Load files in Atom from command line more quickly:
 alias a="atom"
 
+# Touch / Open
+# New secondary note
+alias nsn="bash ~/Projects/dot_files/new_note.sh"
+
 
 # Git
 ## Git add all, then commit
