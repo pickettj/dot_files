@@ -33,6 +33,7 @@ KITOB=$HOME/Box/Kitob-khona/
 alias proj="$PROJ"
 alias teach="$TEACH"
 alias notes="$NOTES"
+alias dot="cd $PROJ/dot_files"
 
 
 # Processes
