@@ -279,9 +279,9 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>299 321 799 448 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>388 363 620 392 0 0 1440 877 </string>
+	<string>390 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>280 441 570 377 0 0 1440 877 </string>
+	<string>134 150 1172 470 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1571,7 +1571,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>573B69BA-A145-4C96-9C87-D0FC284ED2E5</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>14</integer>
+	<integer>45</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1964,6 +1964,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>currentTab.window</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>id</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -2151,6 +2159,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>window</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>id</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -2272,6 +2288,11 @@
 			</dict>
 		</array>
 	</dict>
+	<key>NoSyncSearchHistory2</key>
+	<array>
+		<string>Sync</string>
+		<string>sync</string>
+	</array>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>595210712.20940602</real>
 	<key>PrefsCustomFolder</key>
@@ -2287,15 +2308,17 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-21T02:26:08Z</date>
+	<date>2020-02-03T14:25:18Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
-	<false/>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
 	<string>3.3.7</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
