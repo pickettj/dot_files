@@ -6,6 +6,7 @@ alias a="atom"
 # Touch / Open
 # New secondary note
 alias nsn="bash ~/Projects/dot_files/new_note.sh"
+alias nser="bash ~/Projects/dot_files/new_doc_note.sh"
 
 
 # Git
