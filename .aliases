@@ -66,3 +66,5 @@ alias pahdic="open $NOTES/Digital_Humanities/pahlavi_dictionary.fmp12"
 alias jyp="jupyter notebook --notebook-dir='$PROJ/jupyter_notebooks'"
 
 alias corpus="jupyter notebook --notebook-dir='$PROJ/eurasia_corpus_tool'"
+
+alias fuz="cd $PROJ/fuzzy && python3 server.py --tag "@" --sep --path $PROJ/dot_files/fuzzy_files"
