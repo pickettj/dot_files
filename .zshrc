@@ -125,3 +125,19 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# (note: note sure if this second Anaconda path will mess up the first one on other computers)
+
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/jamespickett/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    \eval "$__conda_setup"
+else
+    if [ -f "/Users/jamespickett/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/jamespickett/anaconda3/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH="/Users/jamespickett/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda init <<<
