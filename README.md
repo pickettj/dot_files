@@ -32,6 +32,7 @@ Misc. personal customization files.
   - Installation: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
 - [Fuzzy Finder](https://github.com/junegunn/fzf): interactive Unix filter for command-line that can be used with any list; files, command history, processes, hostnames, bookmarks, git commits, etc.
   - Installation: `brew install fzf`
+    - Then `$(brew --prefix)/opt/fzf/install` (`/usr/local/opt/fzf/install`) to add `**`-triggered fuzzy completion (this step is easy to miss).
 
 ### Git
 
