@@ -23,6 +23,7 @@ alias fgit="git add -A && git commit -m 'failsafe: adding and committing all' &&
 alias lst="ls -lsat"
 
 # Variables for Common Paths
+BOX=$HOME/Box
 PROJ=$HOME/Projects
 TEACH=$HOME/Box/Teaching
 NOTES=$HOME/Box/Notes
@@ -35,6 +36,7 @@ alias proj="$PROJ"
 alias teach="$TEACH"
 alias notes="$NOTES"
 alias dot="cd $PROJ/dot_files"
+alias box="$BOX"
 
 
 # Processes
