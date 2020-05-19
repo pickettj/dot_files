@@ -25,10 +25,14 @@ alias lst="ls -lsat"
 # Variables for Common Paths
 BOX=$HOME/Box
 PROJ=$HOME/Projects
-TEACH=$HOME/Box/Teaching
-NOTES=$HOME/Box/Notes
-INBOX=$HOME/Box/Inbox
-KITOB=$HOME/Box/Kitob-khona/
+TEACH=$BOX/Teaching
+NOTES=$BOX/Notes
+INBOX=$BOX/Inbox
+KITOB=$BOX/Kitob-khona/
+ADMIN=$BOX/Administrative
+PROF=$BOX/Professional
+
+
 
 # Directory Jumps
 ## Switch to projects
