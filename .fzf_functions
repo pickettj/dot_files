@@ -1,0 +1,33 @@
+# FZF Functions
+
+# https://github.com/junegunn/fzf/wiki/examples
+
+
+
+
+# Fuzzy Change Directory (only within directories situated recursively below current context)
+fd() {
+  local dir
+  dir=$(find . -type d | fzf) &&
+  cd "$dir" && ls -a
+}
+
+
+# Fuzzy Open File (only files nested recursively within current context)
+fo() {
+  local file
+  file=$(find . -type f | fzf --preview 'cat {}') &&
+  open "$file"
+}
+
+
+# Fuzzy Open File in Atom (only files nested recursively within current context)
+fa() {
+  local file
+  file=$(find . -type f | fzf --preview 'cat {}') &&
+  a "$file"
+}
+
+
+# Fuzzy search file contents (current folder)
+alias fc="grep --line-buffered --color=never -r "" * | fzf"
