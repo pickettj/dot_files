@@ -18,9 +18,11 @@ alias mgs="proj && bash ./multi-git-status/mgitstatus"
 
 alias fgit="git add -A && git commit -m 'failsafe: adding and committing all' && git push"
 
+
 # Command Shortcuts
 ## list with more information
 alias lst="ls -lsat"
+
 
 # Variables for Common Paths
 BOX=$HOME/Box
@@ -55,6 +57,7 @@ alias bact="ssh root@bactriana.org"
 
 ## Workflow: parse everything in markdown folder
 alias md_parse="python3 ~/Projects/xml_development_eurasia/markdown_parser/markdown_parser_3.0.py"
+
 
 ## Open most recently downloaded item
 ### The bits between parentheses are glob qualifiers:

@@ -1,6 +1,8 @@
 # FZF Functions
-
 # https://github.com/junegunn/fzf/wiki/examples
+
+
+
 
 
 
@@ -15,7 +17,14 @@ fd() {
 # Fuzzy Open File (only files nested recursively within current context)
 fo() {
   local file
-  file=$(find . -type f | fzf --preview 'cat {}') &&
+  file=$(find . -type f | fzf --preview 'cat {}' --delimiter / --with-nth -1) &&
+  open "$file"
+}
+
+# Fuzzy Open File (from common working directory)
+fow() {
+  local file
+  file=$(find $TEACH $PROF $ADMIN $PROJ -type f | fzf --preview 'cat {}' --delimiter / --with-nth -1) &&
   open "$file"
 }
 
