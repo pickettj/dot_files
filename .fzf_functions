@@ -2,14 +2,22 @@
 # https://github.com/junegunn/fzf/wiki/examples
 
 
-
-
+# Help
+alias fzh='echo "$FZHELP"'
+FZHELP=' fd: recursive change directory\n fdw: change to working directory\n fo: open file\n fow: open file from working directory\n fa: recursively open file in atom\n fmw: move file recursively to working directory\n fmr: move file recursively within directory'
 
 
 # Fuzzy Change Directory (only within directories situated recursively below current context)
 fd() {
   local dir
   dir=$(find . -type d | fzf) &&
+  cd "$dir" && ls -a
+}
+
+# Fuzzy Change Directory (from common working directory)
+fdw() {
+  local dir
+  dir=$(find $TEACH $PROF $ADMIN $PROJ -type d | fzf) &&
   cd "$dir" && ls -a
 }
 
@@ -47,7 +55,7 @@ fmw() {
 }
 
 # Fuzzy Move File to Common Kitob Khona directories
-## note: still not working
+## NOT WORKING
 fmk() {
   local file
   file=$(find . -type f | fzf --preview 'cat {}') &&
@@ -67,13 +75,24 @@ fmr() {
 }
 
 
+
 # Fuzzy search file contents (current folder)
+## NOT WORKING
 alias fc="grep --line-buffered --color=never -r "" * | fzf"
-
-
 
 
 f() {
     sels=( "${(@f)$(fd "${fd_default[@]}" "${@:2}"| fzf)}" )
     test -n "$sels" && print -z -- "$1 ${sels[@]:q:q}"
+}
+
+
+# Fuzzy Create File (in working folder)
+## NOT  WORKING
+ftf() {
+  read -p "File name: " file
+  local dir
+  dir=$(find $KITOB"Secondary Literature/Pickett library" $KITOB"Secondary Literature/Unsorted Secondary Literature" $KITOB"Primary Sources" -type d | fzf)
+  touch $dir/$file
+  open $dir/$file
 }
