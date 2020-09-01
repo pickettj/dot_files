@@ -30,7 +30,7 @@ PROJ=$HOME/Projects
 TEACH=$BOX/Teaching
 NOTES=$BOX/Notes
 INBOX=$BOX/Inbox
-KITOB=$BOX/Kitob-khona/
+KITOB=$BOX/Kitob-khona
 ADMIN=$BOX/Administrative
 PROF=$BOX/Professional
 
