@@ -4,7 +4,7 @@
 
 # Help
 alias fzh='echo "$FZHELP"'
-FZHELP=' fd: recursive change directory\n fdw: change to working directory\n fo: open file\n fow: open file from working directory\n fa: recursively open file in atom\n fmw: move file recursively to working directory\n fmr: move file recursively within directory'
+FZHELP=' fd: recursive change directory\n fdw: change to working directory\n fo: open file\n fow: open file from working directory\n fa: recursively open file in atom\n fmw: move file recursively to working directory\n fmr: move file recursively within directory\n fmk: move file to common Kitob Khona directory\n fc: search within file content recursively\n ftf: create and open new file in working directory'
 
 
 # Fuzzy Change Directory (only within directories situated recursively below current context)
@@ -50,17 +50,16 @@ fmw() {
   local file
   file=$(find . -type f | fzf --preview 'cat {}') &&
   local dir
-  dir=$(find $TEACH $PROF $ADMIN $PROJ -type d | fzf)
+  dir=$(find $TEACH $PROF $ADMIN $PROJ "${BOX}/Resources and Reference" -type d | fzf)
   mv "$file" "$dir"
 }
 
 # Fuzzy Move File to Common Kitob Khona directories
-## NOT WORKING
 fmk() {
   local file
   file=$(find . -type f | fzf --preview 'cat {}') &&
   local dir
-  dir=$(find $KITOB"Secondary Literature/Pickett library" $KITOB"Secondary Literature/Unsorted Secondary Literature" $KITOB"Primary Sources" -type d | fzf)
+  dir=$(find "${KITOB}/Secondary Literature/Pickett Library" "${KITOB}/Secondary Literature/Unsorted Secondary Literature" "${KITOB}/Primary Sources" -type d | fzf)
   mv "$file" "$dir"
 }
 
@@ -77,8 +76,14 @@ fmr() {
 
 
 # Fuzzy search file contents (current folder)
-## NOT WORKING
-alias fc="grep --line-buffered --color=never -r "" * | fzf"
+fc() {
+  local line
+  local file
+  line=$(ag . * | fzf --preview 'echo {} | cut -d : -f 1 | xargs cat' --delimiter / --with-nth -1)
+  file=$(echo $line | cut -d : -f 1)
+  open "$file"
+}
+
 
 
 f() {
@@ -88,11 +93,10 @@ f() {
 
 
 # Fuzzy Create File (in working folder)
-## NOT  WORKING
 ftf() {
-  read -p "File name: " file
+  read "file?File name: "
   local dir
-  dir=$(find $KITOB"Secondary Literature/Pickett library" $KITOB"Secondary Literature/Unsorted Secondary Literature" $KITOB"Primary Sources" -type d | fzf)
-  touch $dir/$file
-  open $dir/$file
+  dir=$(find "${BOX}/Inbox" "${TEACH}" "${PROJ}" "${NOTES}" "${ADMIN}" ${PROF} -type d | fzf)
+  touch "${dir}/${file}"
+  open "${dir}/${file}"
 }
