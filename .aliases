@@ -33,6 +33,7 @@ INBOX=$BOX/Inbox
 KITOB=$BOX/Kitob-khona
 ADMIN=$BOX/Administrative
 PROF=$BOX/Professional
+LANG=$BOX/Language_Resources
 
 
 
@@ -43,6 +44,7 @@ alias notes="$NOTES"
 alias dot="cd $PROJ/dot_files"
 alias box="$BOX"
 alias inbox="cd $INBOX"
+alias lang="cd $LANG"
 
 
 # Processes
