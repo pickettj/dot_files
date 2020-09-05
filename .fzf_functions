@@ -48,7 +48,7 @@ fa() {
 # Fuzzy Move File to Common Working Directories
 fmw() {
   local file
-  file=$(find . -type f | fzf --preview 'cat {}') &&
+  file=$(find . -type f | fzf -m --preview 'cat {}') &&
   local dir
   dir=$(find $TEACH $LANG $PROF $ADMIN $PROJ "${BOX}/Resources and Reference" -type d | fzf)
   mv "$file" "$dir"

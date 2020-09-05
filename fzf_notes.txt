@@ -1,0 +1,3 @@
+# FZF Fuzzy Search Notes
+
+- Must turn on toggle to select multiple files at once using ⇧↹: e.g. `ls | fzf -m` or `ls | fzf --multi`.
