@@ -33,6 +33,7 @@ Misc. personal customization files.
 - [Fuzzy Finder](https://github.com/junegunn/fzf): interactive Unix filter for command-line that can be used with any list; files, command history, processes, hostnames, bookmarks, git commits, etc.
   - Installation: `brew install fzf`
     - Then `$(brew --prefix)/opt/fzf/install` (`/usr/local/opt/fzf/install`) to add `**`-triggered fuzzy completion (this step is easy to miss).
+- MacOS has a deficient `xargs` operator, [necessary to install](https://github.com/pickettj/dot_files/issues/5#issuecomment-687909883) `gxargs`: `brew install findutils`
 
 ### Git
 
