@@ -62,7 +62,7 @@ Misc. personal customization files.
 
 ### [Dashboard](https://github.com/pickettj/dot_files/tree/master/Dashboard)
 
-- Relative links transferable between machines: `ln -s ../../../Box`
+- Relative links transferable between machines: `ln -s ../../../Dropbox`
 
 ### Customization Files
 
@@ -80,4 +80,5 @@ Misc. personal customization files.
     - Pref/Export must be on Chicago Full Note.
   - Install [Better Bibtex](https://retorque.re/zotero-better-bibtex/installation/) for MarkDown citations.
   - Install [ZotFile](http://zotfile.com/) to control which folder automatic downloads go into.
+  - Install [https://github.com/wshanks/Zutilo](https://github.com/wshanks/Zutilo) (mainly to cut and past tags)
 - [Fuzzy Search](https://github.com/iamlemec/fuzzy)
