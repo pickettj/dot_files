@@ -25,15 +25,15 @@ alias lst="ls -lsat"
 
 
 # Variables for Common Paths
-BOX=$HOME/Box
+DROP=$HOME/Dropbox
 PROJ=$HOME/Projects
-TEACH=$BOX/Teaching
-NOTES=$BOX/Notes
-INBOX=$BOX/Inbox
-KITOB=$BOX/Kitob-khona
-ADMIN=$BOX/Administrative
-PROF=$BOX/Professional
-LANG=$BOX/Language_Resources
+TEACH=$DROP/Active_Directories/Teaching
+NOTES=$DROP/Active_Directories/Notes
+INBOX=$DROP/Active_Directories/Inbox
+KITOB=$DROP/Kitob-khona
+ADMIN=$DROP/Active_Directories/Administrative
+PROF=$DROP/Active_Directories/Professional
+LANG=$DROP/Active_Directories/Language_Resources
 
 
 
@@ -42,7 +42,7 @@ alias proj="$PROJ"
 alias teach="$TEACH"
 alias notes="$NOTES"
 alias dot="cd $PROJ/dot_files"
-alias box="$BOX"
+alias drop="$DROP"
 alias inbox="cd $INBOX"
 alias lang="cd $LANG"
 

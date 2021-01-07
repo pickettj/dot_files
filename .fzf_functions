@@ -50,7 +50,7 @@ fmw() {
   local file
   file=$(find . -type f | fzf -m --preview 'cat {}') &&
   local dir
-  dir=$(find $TEACH $LANG $PROF $ADMIN $PROJ "${BOX}/Resources and Reference" -type d | fzf)
+  dir=$(find $TEACH $LANG $PROF $ADMIN $PROJ "${DROP}/Active_Directories/Reference" "${DROP}/Cloud_Directories/Life_Noise" -type d | fzf)
   echo "$file" | gxargs -n 1 -d "\n" -I "{}" mv "{}" "$dir"
 }
 
@@ -59,7 +59,7 @@ fmk() {
   local file
   file=$(find . -type f | fzf --preview 'cat {}') &&
   local dir
-  dir=$(find "${KITOB}/Secondary Literature/Pickett Library" "${KITOB}/Secondary Literature/Unsorted Secondary Literature" "${KITOB}/Primary Sources" -type d | fzf)
+  dir=$(find "${KITOB}/Secondary_Works/Pickett Library" "${KITOB}/Secondary_Works/Unsorted Secondary Literature" "${KITOB}/Primary_Sources" -type d | fzf)
   mv "$file" "$dir"
 }
 
