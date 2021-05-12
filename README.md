@@ -40,6 +40,7 @@ Misc. personal customization files.
 
 - [Multi-Git-Status](https://github.com/fboender/multi-git-status/): List status of all repos in a folder.
 - [MacOS Gitignore] (https://zellwk.com/blog/gitignore/)
+	- command to use global ignore files for all repositories (specific to computer): `git config --global core.excludesfile ~/.gitignore_global`
 	- [ignore file](https://github.com/github/gitignore/blob/master/Global/macOS.gitignore)
 
 
