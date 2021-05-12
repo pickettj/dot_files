@@ -39,7 +39,8 @@ Misc. personal customization files.
 ### Git
 
 - [Multi-Git-Status](https://github.com/fboender/multi-git-status/): List status of all repos in a folder.
-- [MacOS Gitignore](https://github.com/github/gitignore/blob/master/Global/macOS.gitignore)
+- [MacOS Gitignore] (https://zellwk.com/blog/gitignore/)
+	- [ignore file](https://github.com/github/gitignore/blob/master/Global/macOS.gitignore)
 
 
 ### Workflow
