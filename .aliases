@@ -58,7 +58,7 @@ alias bact="ssh root@bactriana.org"
 
 
 ## Workflow: parse everything in markdown folder
-alias md_parse="python3 ~/Projects/xml_development_eurasia/markdown_parser/markdown_parser_3.0.py"
+alias md_parse="python3 ~Projects/xml_development_eurasia/markdown_parser/markdown_parser_3.0.py"
 
 
 ## Open most recently downloaded item
@@ -70,6 +70,8 @@ alias inpdf="open $INBOX/*.pdf(om[1])"
 
 
 # Quick App Opens
+
+alias read_view="cd $PROJ/dot_files && bash reading_view_transform.sh"
 
 alias tool="cd $PROJ/eurasia_corpus_tool && ipython3 -i -c'import text_deciphering_tool  as td'"
 

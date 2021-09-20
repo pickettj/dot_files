@@ -50,7 +50,7 @@ fmw() {
   local file
   file=$(find . -type f | fzf -m --preview 'cat {}') &&
   local dir
-  dir=$(find $TEACH $LANG $PROF $ADMIN $PROJ "${DROP}/Active_Directories/Reference" "${DROP}/Cloud_Directories/Life_Noise" -type d | fzf)
+  dir=$(find $TEACH $LANG $PROF $ADMIN $PROJ $NOTES "${DROP}/Active_Directories/Publications" "${DROP}/Active_Directories/Reference" "${DROP}/Cloud_Directories/Life_Noise" -type d | fzf)
   echo "$file" | gxargs -n 1 -d "\n" -I "{}" mv "{}" "$dir"
 }
 

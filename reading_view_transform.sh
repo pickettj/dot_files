@@ -24,3 +24,5 @@ echo $sax_dir
 
 # run XSL transformation
 java -cp ../sync/SaxonHE10-5J/saxon-he-10.5.jar net.sf.saxon.Transform -s:$file -xsl:$xsl_dir -o:$output_path
+
+open $output_path
