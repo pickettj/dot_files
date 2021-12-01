@@ -60,7 +60,7 @@ Misc. personal customization files.
 
 ### Mac OS
 
-- Organize Dock with extra spaces: `defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall`
+- Organize Dock with extra spaces: `defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock`
 - Display all dot files in Finder:`defaults write com.apple.Finder AppleShowAllFiles true; killall Finder`
 
 ### [Dashboard](https://github.com/pickettj/dot_files/tree/master/Dashboard)
