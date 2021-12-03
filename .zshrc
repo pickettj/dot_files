@@ -11,6 +11,8 @@ source ~/Projects/dot_files/.fzf_functions
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export PATH=/opt/homebrew/bin:$PATH
+
 
 
 
