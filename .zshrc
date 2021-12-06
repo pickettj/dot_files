@@ -118,18 +118,35 @@ export VISUAL=/usr/bin/nano
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# conda path
 
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$($HOME/opt/anaconda3/bin/conda 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/PICKETTJ/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "$HOME/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/opt/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/PICKETTJ/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/PICKETTJ/opt/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="$HOME/opt/anaconda3/bin:$PATH"
+        export PATH="/Users/PICKETTJ/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/PICKETTJ/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/PICKETTJ/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/PICKETTJ/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/PICKETTJ/opt/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -137,18 +154,18 @@ unset __conda_setup
 
 # (note: note sure if this second Anaconda path will mess up the first one on other computers)
 
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/jamespickett/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
-else
-    if [ -f "/Users/jamespickett/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/jamespickett/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        \export PATH="/Users/jamespickett/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# __conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/jamespickett/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     \eval "$__conda_setup"
+# else
+#     if [ -f "/Users/jamespickett/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/jamespickett/anaconda3/etc/profile.d/conda.sh"
+#         CONDA_CHANGEPS1=false conda activate base
+#     else
+#         \export PATH="/Users/jamespickett/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
 # <<< conda init <<<
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

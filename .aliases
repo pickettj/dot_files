@@ -75,7 +75,7 @@ alias read_view="cd $PROJ/dot_files && bash reading_view_transform.sh"
 
 alias tool="cd $PROJ/eurasia_corpus_tool && ipython3 -i -c'import text_deciphering_tool  as td'"
 
-alias pahtool="cd $PROJ/pahlavi_digital_projects && ipython -i import_pahlavi_tool.py"
+alias pahtool="cd $PROJ/pahlavi_digital_projects && ipython -i import_pahlavi_tool as pt"
 
 alias dige="open $NOTES/Digital_Humanities/database_digital_eurasia_6.1.fmp12"
 
