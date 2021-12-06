@@ -14,6 +14,9 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH=/opt/homebrew/bin:$PATH
 
 
+# pyenv python version manager
+eval "$(pyenv init -)"
+
 
 
 # Set name of the theme to load --- if set to "random", it will

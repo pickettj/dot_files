@@ -36,6 +36,10 @@ Misc. personal customization files.
     - Then `$(brew --prefix)/opt/fzf/install` (`/usr/local/opt/fzf/install`) to add `**`-triggered fuzzy completion (this step is easy to miss).
 - MacOS has a deficient `xargs` operator, [necessary to install](https://github.com/pickettj/dot_files/issues/5#issuecomment-687909883) `gxargs`: `brew install findutils`
 
+### Python
+
+- Install [Python version manager](https://realpython.com/intro-to-pyenv/), [pyenv](https://github.com/pyenv/pyenv)
+
 ### Git
 
 - [Multi-Git-Status](https://github.com/fboender/multi-git-status/): List status of all repos in a folder.

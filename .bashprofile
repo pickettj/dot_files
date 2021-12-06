@@ -9,6 +9,9 @@
 ## source to run scripts of bash commands
 
 
+# pyenv python version manager
+eval "$(pyenv init -)"
+
 # Yellow Lightning Bolt Prompt
 ## http://tutorials.jumpstartlab.com/academy/workshops/terminal_and_editor.html
 export PS1="\W \[\033[0;33m\]⚡\[\033[0;39m\] "
