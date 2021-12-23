@@ -67,7 +67,7 @@ fmk() {
 # Fuzzy Move File (recursively within directory)
 fmr() {
   local file
-  file=$(find . -type f | fzf --preview 'cat {}') &&
+  file=$(find . -type f | fzf -m --preview 'cat {}') &&
   local dir
   dir=$(find . -type d | fzf)
   mv "$file" "$dir"
