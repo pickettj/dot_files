@@ -70,7 +70,7 @@ fmr() {
   file=$(find . -type f | fzf -m --preview 'cat {}') &&
   local dir
   dir=$(find . -type d | fzf)
-  mv "$file" "$dir"
+  echo "$file" | gxargs -n 1 -d "\n" -I "{}" mv "{}" "$dir"
 }
 
 
