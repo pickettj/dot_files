@@ -17,7 +17,7 @@ fd() {
 # Fuzzy Change Directory (from common working directory)
 fdw() {
   local dir
-  dir=$(find $LANG $TEACH $PROF $ADMIN $PROJ -type d | fzf) &&
+  dir=$(find $LANG $NOTES $TEACH $PROF $ADMIN $PROJ -type d | fzf) &&
   cd "$dir" && ls -a
 }
 
@@ -32,7 +32,7 @@ fo() {
 # Fuzzy Open File (from common working directory)
 fow() {
   local file
-  file=$(find $LANG $TEACH $PROF $ADMIN $PROJ -type f | fzf --preview 'cat {}' --delimiter / --with-nth -1) &&
+  file=$(find $LANG $TEACH $NOTES $PROF $ADMIN $PROJ -type f | fzf --preview 'cat {}' --delimiter / --with-nth -1) &&
   open "$file"
 }
 
