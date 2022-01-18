@@ -60,6 +60,9 @@ alias bact="ssh root@bactriana.org"
 ## Workflow: parse everything in markdown folder
 alias md_parse="python3 $PROJ/xml_development_eurasia/markdown_parser/markdown_parser_3.0.py"
 
+## Workflow: convert the latest tokenizing code from notebook to script and then run it"
+alias tokenize_eur="cd $PROJ/eurasia_corpus_tool && jupyter nbconvert --to script text_cleaning_tokenizing.ipynb && python3 text_cleaning_tokenizing.py"
+
 
 ## Open most recently downloaded item
 ### The bits between parentheses are glob qualifiers:
