@@ -5,7 +5,7 @@
 # Help
 ## Back slash after the end of the string
 alias fzh='echo "$FZHELP"'
-FZHELP=' fd: recursive change directory\n fdw: change to working directory\n fo: open file\n fow: open file from working directory\n fa: recursively open file in atom\n fmw: move file recursively to working directory\n fmr: move file recursively within directory\n fmk: move file to common Kitob Khona directory\n fzc: search within file content recursively\n ftf: create and open new file in working directory'
+FZHELP=' fd: recursive change directory\n fdw: change to working directory\n fo: open file\n fow: open file from working directory\n fa: recursively open file in atom\n fmw: move file recursively to working directory\n fmr: move file recursively within directory\n fmk: move file to common Kitob Khona directory\n fzc: search within file content recursively\n ftf: create and open new file in working directory\n fh: command line history'
 
 # Fuzzy Change Directory (only within directories situated recursively below current context)
 fd() {
@@ -98,4 +98,10 @@ ftf() {
   dir=$(find "${LANG}" "${BOX}/Inbox" "${TEACH}" "${PROJ}" "${NOTES}" "${ADMIN}" ${PROF} -type d | fzf)
   touch "${dir}/${file}"
   open "${dir}/${file}"
+}
+
+
+# fh - repeat history
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
 }
