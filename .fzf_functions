@@ -5,7 +5,7 @@
 # Help
 ## Back slash after the end of the string
 alias fzh='echo "$FZHELP"'
-FZHELP=' fd: recursive change directory\n fdw: change to working directory\n fo: open file\n fow: open file from working directory\n fa: recursively open file in atom\n fmw: move file recursively to working directory\n fmr: move file recursively within directory\n fmk: move file to common Kitob Khona directory\n fzc: search within file content recursively\n ftf: create and open new file in working directory\n fh: command line history'
+FZHELP=' fd: recursive change directory\n fdw: change to working directory\n fo: open file\n fow: open file from working directory\n fmd: read file inline in MarkDown\n fa: recursively open file in atom\n fmw: move file recursively to working directory\n fmr: move file recursively within directory\n fmk: move file to common Kitob Khona directory\n fzc: search within file content recursively\n ftf: create and open new file in working directory\n fh: command line history'
 
 # Fuzzy Change Directory (only within directories situated recursively below current context)
 fd() {
@@ -17,7 +17,7 @@ fd() {
 # Fuzzy Change Directory (from common working directory)
 fdw() {
   local dir
-  dir=$(find $LANG $NOTES $TEACH $PROF $ADMIN $PROJ -type d | fzf) &&
+  dir=$(find $LANG $REF $NOTES $TEACH $PROF $ADMIN $PROJ -type d | fzf) &&
   cd "$dir" && ls -a
 }
 
@@ -45,12 +45,20 @@ fa() {
 }
 
 
+# Fuzzy read MarkDown file in MDLess
+fmd() {
+  local file
+  file=$(find . -type f | fzf --preview 'cat {}') &&
+  mdless "$file"
+}
+
+
 # Fuzzy Move File to Common Working Directories
 fmw() {
   local file
   file=$(find . -type f | fzf -m --preview 'cat {}') &&
   local dir
-  dir=$(find $TEACH $LANG $PROF $ADMIN $PROJ $NOTES "${DROP}/Active_Directories/Publications" "${DROP}/Active_Directories/Reference" "${DROP}/Cloud_Directories/Life_Noise" -type d | fzf)
+  dir=$(find $REF $TEACH $LANG $PROF $ADMIN $PROJ $NOTES "${DROP}/Active_Directories/Publications" "${DROP}/Active_Directories/Reference" "${DROP}/Cloud_Directories/Life_Noise" -type d | fzf)
   echo "$file" | gxargs -n 1 -d "\n" -I "{}" mv "{}" "$dir"
 }
 
@@ -75,6 +83,7 @@ fmr() {
 
 
 # Fuzzy search file contents (current folder)
+## bug: currently this only works if there are no spaces in the filename
 fzc() {
   local line
   local file
@@ -95,7 +104,7 @@ f() {
 ftf() {
   read "file?File name: "
   local dir
-  dir=$(find "${LANG}" "${BOX}/Inbox" "${TEACH}" "${PROJ}" "${NOTES}" "${ADMIN}" ${PROF} -type d | fzf)
+  dir=$(find "${LANG}" "${BOX}/Inbox" "${TEACH}" "${REF}" "${PROJ}" "${NOTES}" "${ADMIN}" ${PROF} -type d | fzf)
   touch "${dir}/${file}"
   open "${dir}/${file}"
 }

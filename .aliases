@@ -34,6 +34,7 @@ KITOB=$DROP/Kitob-khona
 ADMIN=$DROP/Active_Directories/Administrative
 PROF=$DROP/Active_Directories/Professional
 LANG=$DROP/Active_Directories/Language_Resources
+REF=$DROP/Active_Directories/Reference
 
 
 
@@ -45,6 +46,7 @@ alias dot="cd $PROJ/dot_files"
 alias drop="$DROP"
 alias inbox="cd $INBOX"
 alias lang="cd $LANG"
+alias ref="cd $REF"
 
 
 # Processes
