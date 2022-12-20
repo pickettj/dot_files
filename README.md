@@ -35,6 +35,8 @@ Misc. personal customization files.
   - Installation: `brew install fzf`
     - Then `$(brew --prefix)/opt/fzf/install` (`/usr/local/opt/fzf/install`) to add `**`-triggered fuzzy completion (this step is easy to miss).
 - MacOS has a deficient `xargs` operator, [necessary to install](https://github.com/pickettj/dot_files/issues/5#issuecomment-687909883) `gxargs`: `brew install findutils`
+- [MDLess](https://brettterpstra.com/projects/mdless/): read markdown inline
+  - Installation: `sudo gem install mdless`
 
 ### Python
 
