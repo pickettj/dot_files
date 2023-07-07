@@ -17,7 +17,7 @@ fd() {
 # Fuzzy Change Directory (from common working directory)
 fdw() {
   local dir
-  dir=$(find $LANG $REF $NOTES $TEACH $PROF $ADMIN $PROJ -type d | fzf) &&
+  dir=$(find "${DROP}/Active_Directories/Publications" "${DROP}/Active_Directories/Personal" $LANG $REF $NOTES $TEACH $PROF $ADMIN $PROJ -type d | fzf) &&
   cd "$dir" && ls -a
 }
 
@@ -32,7 +32,7 @@ fo() {
 # Fuzzy Open File (from common working directory)
 fow() {
   local file
-  file=$(find $LANG $TEACH $NOTES $PROF $ADMIN $PROJ -type f | fzf --preview 'cat {}' --delimiter / --with-nth -1) &&
+  file=$(find "${DROP}/Active_Directories/Publications" "${DROP}/Active_Directories/Personal" $LANG $TEACH $NOTES $PROF $ADMIN $PROJ -type f | fzf --preview 'cat {}' --delimiter / --with-nth -1) &&
   open "$file"
 }
 
@@ -58,7 +58,7 @@ fmw() {
   local file
   file=$(find . -type f | fzf -m --preview 'cat {}') &&
   local dir
-  dir=$(find $REF $TEACH $LANG $PROF $ADMIN $PROJ $NOTES "${DROP}/Active_Directories/Publications" "${DROP}/Active_Directories/Reference" "${DROP}/Cloud_Directories/Life_Noise" -type d | fzf)
+  dir=$(find "${DROP}/Active_Directories/Publications" "${DROP}/Active_Directories/Personal" $REF $TEACH $LANG $PROF $ADMIN $PROJ $NOTES "${DROP}/Active_Directories/Publications" "${DROP}/Active_Directories/Reference" "${DROP}/Cloud_Directories/Life_Noise" -type d | fzf)
   echo "$file" | gxargs -n 1 -d "\n" -I "{}" mv "{}" "$dir"
 }
 
@@ -104,7 +104,7 @@ f() {
 ftf() {
   read "file?File name: "
   local dir
-  dir=$(find "${LANG}" "${BOX}/Inbox" "${TEACH}" "${REF}" "${PROJ}" "${NOTES}" "${DROP}/Active_Directories/Publications" "${ADMIN}" ${PROF} -type d | fzf)
+  dir=$(find "${LANG}" "${BOX}/Inbox" "${TEACH}" "${REF}" "${PROJ}" "${NOTES}" "${DROP}/Active_Directories/Publications" "${DROP}/Active_Directories/Personal" "${ADMIN}" ${PROF} -type d | fzf)
   touch "${dir}/${file}"
   open "${dir}/${file}"
 }
