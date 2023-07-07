@@ -2,6 +2,7 @@
 
 # Load files in Atom from command line more quickly:
 alias a="atom"
+alias vs="code"
 
 # Touch / Open
 # New secondary note
