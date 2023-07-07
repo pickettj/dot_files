@@ -104,7 +104,7 @@ f() {
 ftf() {
   read "file?File name: "
   local dir
-  dir=$(find "${LANG}" "${BOX}/Inbox" "${TEACH}" "${REF}" "${PROJ}" "${NOTES}" "${ADMIN}" ${PROF} -type d | fzf)
+  dir=$(find "${LANG}" "${BOX}/Inbox" "${TEACH}" "${REF}" "${PROJ}" "${NOTES}" "${DROP}/Active_Directories/Publications" "${ADMIN}" ${PROF} -type d | fzf)
   touch "${dir}/${file}"
   open "${dir}/${file}"
 }
