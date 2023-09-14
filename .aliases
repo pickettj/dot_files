@@ -8,6 +8,7 @@ alias vs="code"
 # New secondary note
 alias nsn="bash ~/Projects/dot_files/new_note.sh"
 alias nser="bash ~/Projects/dot_files/new_doc_note.sh"
+alias gs="bash ~/Projects/dot_files/grep_select.sh"
 
 
 # Git
