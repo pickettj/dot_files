@@ -1,6 +1,6 @@
 # Customization
 
-Misc. personal customization files.
+Miscellaneous personal customization files.
 
 
 ## Dotfiles
