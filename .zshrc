@@ -1,29 +1,25 @@
+# Set quiet mode for instant prompt before loading it
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Call aliases
-source ~/Projects/dot_files/.aliases
-
-# Call function libraries
-
-source ~/Projects/dot_files/.fzf_functions
-
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH=/opt/homebrew/bin:$PATH
 
-
-# pyenv python version manager
-eval "$(pyenv init -)"
-
-
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -102,12 +98,19 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 export EDITOR=/usr/bin/nano
-
 export VISUAL=/usr/bin/nano
-
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+
+# Call aliases and functions (moved after oh-my-zsh is loaded)
+source ~/Projects/dot_files/.aliases
+source ~/Projects/dot_files/.fzf_functions
+
+# pyenv python version manager (only run if pyenv exists)
+if command -v pyenv &> /dev/null; then
+  eval "$(pyenv init -)" &> /dev/null
+fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -118,9 +121,6 @@ export VISUAL=/usr/bin/nano
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# conda path
-
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/PICKETTJ/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -128,32 +128,15 @@ if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
     if [ -f "/Users/PICKETTJ/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/PICKETTJ/opt/anaconda3/etc/profile.d/conda.sh"
+# . "/Users/PICKETTJ/opt/anaconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
     else
-        export PATH="/Users/PICKETTJ/opt/anaconda3/bin:$PATH"
+# export PATH="/Users/PICKETTJ/opt/anaconda3/bin:$PATH"  # commented out by conda initialize
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
+# <<< conda initialize <
 
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/PICKETTJ/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/PICKETTJ/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/PICKETTJ/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/PICKETTJ/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# (note: note sure if this second Anaconda path will mess up the first one on other computers)
-
+# Alternative Anaconda path (commented out as it might conflict)
 # __conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/jamespickett/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
 # if [ $? -eq 0 ]; then
 #     \eval "$__conda_setup"
@@ -166,6 +149,9 @@ unset __conda_setup
 #     fi
 # fi
 # unset __conda_setup
-# <<< conda init <<<
+# <<< conda init <
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
