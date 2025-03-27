@@ -15,6 +15,9 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 export PATH=/opt/homebrew/bin:$PATH
 
+# Add dot_files scripts to PATH so they can be executed from anywhere
+export PATH="$HOME/Projects/dot_files:$PATH"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -155,3 +158,19 @@ unset __conda_setup
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export JAVA_HOME="/opt/homebrew/opt/openjdk"
+
+
+# Easily open files in Zed from command line:
+    # https://glenmiracle.framer.website/notes/setting-up-quck-open-for-zed-editor
+
+zed() {
+    if [[ $# -eq 0 ]]; then
+        open -a Zed .
+    else
+        open -a Zed "$@"
+    fi
+}
+
+alias .='zed .'
