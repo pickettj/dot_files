@@ -8,10 +8,7 @@ CSS_FILE="$HOME/.pandoc/default.css"
 # Define common search locations for markdown files (mirroring your fzf functions)
 # You can customize these paths to match your commonly used directories
 SEARCH_DIRS=(
-  "$DROP/Active_Directories/Publications" 
-  "$DROP/Active_Directories/Personal"
-  "$DROP/Active_Directories/Notes"
-  "$DROP/Active_Directories/Inbox"
+  "$DROP/Active_Directories"
 )
 
 # Function to display usage information
@@ -151,27 +148,27 @@ find_markdown() {
 # Main conversion function
 md2pdf() {
     local file="$1"
-    
+
     # Extract file name
     name="${file%.md}"
     name="${name##*/}"
     echo "Processing: $name"
-    
+
     # Convert to HTML first
     html_out="$OUTPUT_DIR/${name}.html"
     echo "Creating HTML..."
-    
-    pandoc "$file" -o "$html_out" --standalone --embed-resources --metadata title="$name" --css="$CSS_FILE" -t html5
-    
+
+    pandoc "$file" -o "$html_out" --standalone --embed-resources --css="$CSS_FILE" -t html5 --no-highlight
+
     if [ ! -f "$html_out" ] || [ ! -s "$html_out" ]; then
         echo "✗ Error creating HTML for $name"
         return 1
     fi
-    
+
     # Then try to convert to PDF if Chrome exists
     pdf_out="$OUTPUT_DIR/${name}.pdf"
     echo "Creating PDF..."
-    
+
     # Find Chrome executable
     chrome_path=""
     if [ -f "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" ]; then
@@ -183,11 +180,11 @@ md2pdf() {
     elif command -v chromium &>/dev/null; then
         chrome_path="chromium"
     fi
-    
+
     if [ -n "$chrome_path" ]; then
         # Use Chrome to generate PDF
         "$chrome_path" --headless --disable-gpu --print-to-pdf="$pdf_out" "$html_out"
-        
+
         if [ -f "$pdf_out" ] && [ -s "$pdf_out" ]; then
             echo "✓ Created PDF: $pdf_out"
             rm "$html_out"  # Remove the intermediate HTML
@@ -199,7 +196,7 @@ md2pdf() {
     else
         echo "Chrome not found. Keeping HTML version."
     fi
-    
+
     # Open HTML if PDF wasn't created successfully
     open "$html_out" 2>/dev/null || xdg-open "$html_out" 2>/dev/null
     return 0

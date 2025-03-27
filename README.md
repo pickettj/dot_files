@@ -23,7 +23,7 @@ Miscellaneous personal customization files.
   - oh-my-zsh is an essential configuration manager for Zsh, should be installed at the same time.
     - oh-my-zsh controls [themes](https://github.com/robbyrussell/oh-my-zsh/wiki/themes) and [aliases](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet)
       - Remember to [install font](https://www.fontsquirrel.com/fonts/source-code-pro) for [powerlevel9k theme](https://github.com/Powerlevel9k/powerlevel9k/wiki/Install-Instructions#step-1-install-powerlevel9k) and change iTerm2 (`iTerm2 > Preferences > Profiles > Text > Change Font`)
-  - Zsh has a configuration file (`.zshrc`), which controls shell configuration and aliases, more or less equivalent to the `bash_profile`. It also has `.zshenv`,  which sets various environment variables.  
+  - Zsh has a configuration file (`.zshrc`), which controls shell configuration and aliases, more or less equivalent to the `bash_profile`. It also has `.zshenv`,  which sets various environment variables.
     - ([Lengthy explanation](https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout) of the difference between the two kinds of dot files.)
     - Anaconda automatically updates the bashprofile; but for zsh, `run conda init zsh`
 - iTerm2
@@ -88,6 +88,6 @@ Miscellaneous personal customization files.
   - `Pref/Advanced/Shortcuts`: Cmd+Shift+W for citation.
     - Pref/Export must be on Chicago Full Note.
   - Install [Better Bibtex](https://retorque.re/zotero-better-bibtex/installation/) for MarkDown citations.
-  - Install [ZotFile](http://zotfile.com/) to control which folder automatic downloads go into.
+  - Install [ZotMoove](https://github.com/wileyyugioh/zotmoov?tab=readme-ov-file)(Zotfile now extinct) to control which folder automatic downloads go into.
   - Install [https://github.com/wshanks/Zutilo](https://github.com/wshanks/Zutilo) (mainly to cut and past tags)
 - [Fuzzy Search](https://github.com/iamlemec/fuzzy)
