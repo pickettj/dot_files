@@ -60,8 +60,8 @@ Miscellaneous personal customization files.
     - Extra install: 'brew cask install corelocationcli'
   - [StackExchange Search](https://github.com/deanishe/alfred-stackoverflow)
   - [iTerm integration](https://github.com/stuartcryan/custom-iterm-applescripts-for-alfred)
-  - [Calendar](https://github.com/deanishe/alfred-gcal)
 - [Pandoc](https://pandoc.org/installing.html) document converter
+    - [BasicTeX](https://www.tug.org/mactex/morepackages.html): important dependency for pandoc and scripts, but full Latex is not necessary
 
 
 ### Mac OS
