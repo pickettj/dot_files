@@ -8,7 +8,7 @@ file=$(find $DROP/Active_Directories/Publications -type f | fzf --preview 'cat {
 
 echo "Selected file: $file"
 
-# Extract just the name of the file for output reading file file purposes
+# Extract just the name of the file for output reading file purposes
 name="${file%.xml}"
 name="${name##*/}"
 echo "Processing: $name"
@@ -161,57 +161,52 @@ if [ ! -f "$xhtml_output" ] || [ ! -s "$xhtml_output" ]; then
     echo "Created basic HTML version as fallback."
 fi
 
-# Find Chrome executable
-chrome_path=""
-if [ -f "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" ]; then
-    chrome_path="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-elif [ -f "/Applications/Chromium.app/Contents/MacOS/Chromium" ]; then
-    chrome_path="/Applications/Chromium.app/Contents/MacOS/Chromium"
-elif command -v google-chrome &>/dev/null; then
-    chrome_path="google-chrome"
-elif command -v chromium &>/dev/null; then
-    chrome_path="chromium"
+# Create PDF using Pandoc and BasicTeX
+echo "Creating PDF using Pandoc and BasicTeX..."
+pdf_out="$pdf_output"
+
+# Check if pandoc is installed
+if ! command -v pandoc >/dev/null 2>&1; then
+    echo "pandoc not found. Please install pandoc."
+    exit 1
 fi
 
-# Create PDF using Chrome in headless mode (just like markdown-to-pdf.sh)
-if [ -n "$chrome_path" ]; then
-    echo "Creating PDF using Chrome..."
-    # Use absolute path for the XHTML file instead of relative
-    xhtml_absolute_path=$(realpath "$xhtml_output")
-    echo "Using absolute path: $xhtml_absolute_path"
-    "$chrome_path" --headless --disable-gpu --print-to-pdf="$pdf_output" "file://$xhtml_absolute_path"
+# Check if pdflatex is installed
+if ! command -v pdflatex >/dev/null 2>&1; then
+    echo "pdflatex not found. Please install a LaTeX distribution (e.g., TeX Live or MiKTeX)."
+    exit 1
+fi
 
-    if [ -f "$pdf_output" ] && [ -s "$pdf_output" ]; then
-        echo "✓ Successfully created PDF: $pdf_output"
+# Convert XHTML to PDF using Pandoc
+pandoc "$xhtml_output" -o "$pdf_out" --pdf-engine=pdflatex --css="$css_file"
 
-        # Create and copy URL to clipboard
-        pdf_filename=$(basename "$pdf_output")
-        pdf_url="https://bactriana.org/sandbox/$pdf_filename"
-        echo "Generated URL: $pdf_url"
+# Check if PDF creation was successful
+if [ -f "$pdf_out" ] && [ -s "$pdf_out" ]; then
+    echo "✓ Successfully created PDF: $pdf_out"
 
-        # Copy to clipboard using pbcopy (macOS) or xclip/xsel (Linux)
-        if command -v pbcopy &> /dev/null; then
-            echo "$pdf_url" | pbcopy
-            echo "URL copied to clipboard!"
-        elif command -v xclip &> /dev/null; then
-            echo "$pdf_url" | xclip -selection clipboard
-            echo "URL copied to clipboard!"
-        elif command -v xsel &> /dev/null; then
-            echo "$pdf_url" | xsel --clipboard
-            echo "URL copied to clipboard!"
-        else
-            echo "Could not copy to clipboard: pbcopy, xclip, and xsel not found."
-        fi
+    # Create and copy URL to clipboard
+    pdf_filename=$(basename "$pdf_out")
+    pdf_url="https://bactriana.org/sandbox/$pdf_filename"
+    echo "Generated URL: $pdf_url"
 
-        # Open the PDF
-        open "$pdf_output" 2>/dev/null || xdg-open "$pdf_output" 2>/dev/null
+    # Copy to clipboard using pbcopy (macOS) or xclip/xsel (Linux)
+    if command -v pbcopy &> /dev/null; then
+        echo "$pdf_url" | pbcopy
+        echo "URL copied to clipboard!"
+    elif command -v xclip &> /dev/null; then
+        echo "$pdf_url" | xclip -selection clipboard
+        echo "URL copied to clipboard!"
+    elif command -v xsel &> /dev/null; then
+        echo "$pdf_url" | xsel --clipboard
+        echo "URL copied to clipboard!"
     else
-        echo "✗ PDF creation failed. Opening HTML instead."
-        # Open the HTML file
-        open "$xhtml_output" 2>/dev/null || xdg-open "$xhtml_output" 2>/dev/null
+        echo "Could not copy to clipboard: pbcopy, xclip, and xsel not found."
     fi
+
+    # Open the PDF
+    open "$pdf_out" 2>/dev/null || xdg-open "$pdf_out" 2>/dev/null
 else
-    echo "Chrome not found. Opening HTML file directly."
+    echo "✗ PDF creation failed. Opening HTML instead."
     # Open the HTML file
     open "$xhtml_output" 2>/dev/null || xdg-open "$xhtml_output" 2>/dev/null
 fi

@@ -1,6 +1,9 @@
 # Set quiet mode for instant prompt before loading it
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
+# VS Code from Command line
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
