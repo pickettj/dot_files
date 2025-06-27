@@ -14,6 +14,10 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Conda Path
+
+export PATH="/opt/anaconda3/bin:$PATH"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH=/opt/homebrew/bin:$PATH
@@ -177,3 +181,10 @@ zed() {
 }
 
 alias .='zed .'
+
+
+# open Python research library dashboard
+pylib() {
+   cd /Users/pickettj/Projects/dot_files  # Change to the directory containing your script
+   python3 -i dashboard_python_research_library.py  # Run Python interactively with your script loaded
+}
