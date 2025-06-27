@@ -178,7 +178,7 @@ if ! command -v pdflatex >/dev/null 2>&1; then
 fi
 
 # Convert XHTML to PDF using Pandoc
-pandoc "$xhtml_output" -o "$pdf_out" --pdf-engine=pdflatex --css="$css_file"
+pandoc "$xhtml_output" -o "$pdf_out" --pdf-engine=xelatex --css="$css_file"
 
 # Check if PDF creation was successful
 if [ -f "$pdf_out" ] && [ -s "$pdf_out" ]; then
