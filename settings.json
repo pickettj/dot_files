@@ -6,26 +6,30 @@
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
+//
 {
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
-  "theme": "Ayu Mirage",
-  "language_models": {
-    "anthropic": {
-      "available_models": [
-        {
-          "name": "claude-3-5-sonnet-20240620",
-          "display_name": "Sonnet 2024-June",
-          "max_tokens": 128000,
-          "max_output_tokens": 2560,
-          "cache_configuration": {
-            "max_cache_anchors": 10,
-            "min_total_token": 10000,
-            "should_speculate": false
-          },
-          "tool_override": "some-model-that-supports-toolcalling"
+    "ui_font_size": 16,
+    "buffer_font_size": 16,
+    "theme": "Ayu Mirage",
+    "terminal": {
+        "font_family": "MesloLGS NF"
+    },
+    "language_models": {
+        "anthropic": {
+            "available_models": [
+                {
+                    "name": "claude-3-5-sonnet-20240620",
+                    "display_name": "Sonnet 2024-June",
+                    "max_tokens": 128000,
+                    "max_output_tokens": 2560,
+                    "cache_configuration": {
+                        "max_cache_anchors": 10,
+                        "min_total_token": 10000,
+                        "should_speculate": false
+                    },
+                    "tool_override": "some-model-that-supports-toolcalling"
+                }
+            ]
         }
-      ]
     }
-  }
 }
