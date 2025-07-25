@@ -207,7 +207,7 @@ md2pdf() {
 
         pandoc "$file" \
             -o "$pdf_out" \
-            --pdf-engine=pdflatex \
+            --pdf-engine=xelatex \
             --variable=geometry:margin=1in
 
         if [ -f "$pdf_out" ] && [ -s "$pdf_out" ]; then

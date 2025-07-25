@@ -11,8 +11,10 @@ projects_dir = Path(__file__).parent.parent
 # Your custom libraries
 libraries = {
     "Database Queries": projects_dir / "database/database_query_functions.py",
-    "Persian Dictionary": projects_dir / "persian_dictionary/dictionary_queries.py",
-    "Central Asia Plain Text Corpus": projects_dir / "eurasia_corpus_tool/historical_corpus_plain_text.py",
+    "Persian Dictionary": projects_dir / "persian-dictionary/dictionary_queries.py",
+    "Eurasia Plain Text Corpus": projects_dir / "eurasia_corpus_tool/historical_corpus_plain_text.py",
+    "Eurasia Indexed Corpus": projects_dir / "eurasia_corpus_tool/historical_corpus_indexed.py",
+    "Persian Literature Corpus": projects_dir / "persian_literature_corpus/persian_lit.py",
     "Pahlavi Corpus": projects_dir / "pahlavi_digital_projects/pahlavi_corpus_tool.py",
 }
 
@@ -29,7 +31,9 @@ for i, (name, path) in enumerate(libraries.items(), 1):
     keywords = {
         "Database Queries": "hdb",
         "Persian Dictionary": "perd", 
-        "Central Asia Plain Text Corpus": "hcorp",
+        "Eurasia Plain Text Corpus": "hcorp",
+        "Eurasia Indexed Corpus": "hindex",
+        "Persian Literature Corpus": "plit",
         "Pahlavi Corpus": "pcorp"
     }
     keyword = keywords.get(name, name.split()[0].lower())
