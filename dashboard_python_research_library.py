@@ -11,13 +11,15 @@ projects_dir = Path(__file__).parent.parent
 # Your custom libraries
 libraries = {
     "Database Queries": projects_dir / "database/database_query_functions.py",
+    "Database CRUD": projects_dir / "database/database_crud_functions.py",
     "Persian Dictionary": projects_dir / "persian-dictionary/dictionary_queries.py",
     "Eurasia Plain Text Corpus": projects_dir / "eurasia_corpus_tool/historical_corpus_plain_text.py",
     "Eurasia Indexed Corpus": projects_dir / "eurasia_corpus_tool/historical_corpus_indexed.py",
     "Persian Literature Corpus": projects_dir / "persian-lit/pers_lit_corpus_tool.py",
-    "Pahlavi Corpus": projects_dir / "pahlavi_digital_projects/pahlavi_corpus_tool.py",
+    "Pahlavi Corpus": projects_dir / "pahlavi_digital_projects/pahlavi_functions.py",
     "Pahlavi Data Analysis": projects_dir / "pahlavi_digital_projects/pahlavi_data_analysis.py",
     "Tajik Newspaper Corpus": projects_dir / "eurasia_corpus_tool/tajik_newspaper_corpus_functions.py",
+    "Combined DB & Corpus Tool": projects_dir / "eurasia_corpus_tool/combo_database_corpus_tool.py",
 }
 
 # Display the libraries
@@ -32,13 +34,15 @@ for i, (name, path) in enumerate(libraries.items(), 1):
     # Define custom keywords/acronyms
     keywords = {
         "Database Queries": "hdb",
+        "Database CRUD": "crud",
         "Persian Dictionary": "perd", 
         "Eurasia Plain Text Corpus": "hcorp",
         "Eurasia Indexed Corpus": "hindex",
         "Persian Literature Corpus": "plit",
         "Pahlavi Corpus": "pcorp",
         "Pahlavi Data Analysis": "pahdata",
-        "Tajik Newspaper Corpus": "tajik"
+        "Tajik Newspaper Corpus": "tajik",
+        "Combined DB & Corpus Tool": "combo"
     }
     keyword = keywords.get(name, name.split()[0].lower())
     
@@ -61,13 +65,15 @@ def load_libs(*keywords):
     # Define custom keywords/acronyms
     keyword_map = {
         "hdb": "Database Queries",
+        "crud": "Database CRUD",
         "perd": "Persian Dictionary", 
         "hcorp": "Eurasia Plain Text Corpus",
         "hindex": "Eurasia Indexed Corpus",
         "plit": "Persian Literature Corpus",
         "pcorp": "Pahlavi Corpus",
         "pahdata": "Pahlavi Data Analysis",
-        "tajik": "Tajik Newspaper Corpus"
+        "tajik": "Tajik Newspaper Corpus",
+        "combo": "Combined DB & Corpus Tool"
     }
     
     for keyword in keywords:

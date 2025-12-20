@@ -65,3 +65,15 @@ else
     echo "Transformation failed. Output file was not created."
     exit 1
 fi
+
+for file in input_directory/*.xml; do
+    filename=$(basename "$file")
+    outputname="${filename%.xml}.html"
+    
+    java -jar saxon-he-12.5.jar \
+        -s:"$file" \
+        -xsl:"path_to_XSLT_stylesheet" \
+        -o:"output_directory/$outputname"
+done
+
+
