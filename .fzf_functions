@@ -18,10 +18,10 @@ FZF_WORK_DIRS=(
 
 # Help
 alias fzh='echo "$FZHELP"'
-FZHELP=' fd: recursive change directory\n fdw: change to working directory\n fo: open file\n fow: open file from working directory\n fmd: read file inline in MarkDown\n fa: recursively open file in atom\n fmw: move file recursively to working directory\n fmr: move file recursively within directory\n fmk: move file to common Kitob Khona directory\n fzc: search within file content recursively\n ftf: create and open new file in working directory\n fh: command line history\n fsl: create symlink to file or folder\n fsll: create symlink into current directory'
+FZHELP=' fd: recursive change directory\n fdw: change to working directory\n fo: open file\n fow: open file from working directory\n fmd: read file inline in MarkDown\n fa: recursively open file in atom\n fmw: move file recursively to working directory\n fmr: move file recursively within directory\n fmk: move file to common Kitob Khona directory\n fzc: search within file content recursively\n ftf: create and open new file in working directory\n fh: command line history\n fsl: create symlink to file or folder\n fsll: create symlink into current directory\n fcp: copy path of file or directory to clipboard'
 
 alias gith='echo "$GITHELP"'
-GITHELP=' gac "msg": git add all and commit\n fgit: git add all, commit with failsafe message, and push\n gadd <file> "msg": git add specific file, commit, and push\n gfzf: pick modified file via fzf, commit, and push'
+GITHELP=' gac "msg": git add all and commit\n fgit: git add all, commit with failsafe message, and push\n gadd <file>: git add specific file, commit, and push\n gfzf: pick modified file(s) in current repo via fzf, commit, and push\n gfz: pick modified file(s) across all repos under $PROJ via fzf, commit, and push'
 
 
 # Fuzzy Change Directory (only within directories situated recursively below current context)
@@ -148,11 +148,23 @@ fsll() {
 }
 
 
+# Fuzzy copy path of file or directory to clipboard
+fcp() {
+  local target
+  target=$(find "${FZF_WORK_DIRS[@]}" \( -type f -o -type d \) | \
+    fzf --prompt="Copy path: " --preview 'ls -la {}') || return
+  echo -n "$target" | pbcopy
+  echo "✓ Copied to clipboard: $target"
+}
+
+
 # fh - repeat history
 fh() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
 }
 
+## For gadd, gfzf, and gfz (add file, commit, push) see .fzf_functions
+## Run 'gith' for full git shortcut help
 
 # Git add specific file, commit with message, and push
 gadd() {
@@ -161,11 +173,37 @@ gadd() {
   git commit -m "$msg" && git push
 }
 
-# Git add file(s) via fzf picker (only modified files), commit with message, and push
+# Git add file(s) via fzf picker (modified files in current repo), commit, and push
 gfzf() {
   local files
   files=$(git diff --name-only --diff-filter=M HEAD | fzf -m --preview 'git diff {}') || return
   echo "$files" | xargs git add
   read "msg?Commit message: "
   git commit -m "$msg" && git push
+}
+
+# Git add file(s) via fzf picker (modified files across all repos under $PROJ), commit, and push
+gfz() {
+  local files
+  files=$(find "$PROJ" -maxdepth 2 -name ".git" -type d | while IFS= read -r gitdir; do
+    local repo="${gitdir%/.git}"
+    git -C "$repo" diff --name-only --diff-filter=M HEAD 2>/dev/null | \
+      sed "s|^|${repo}/|"
+  done | fzf -m --preview 'git diff HEAD -- {}') || return
+
+  # Add files, grouped by repo
+  echo "$files" | while IFS= read -r file; do
+    local repo=$(git -C "$(dirname "$file")" rev-parse --show-toplevel 2>/dev/null)
+    git -C "$repo" add "$file"
+  done
+
+  read "msg?Commit message: "
+
+  # Commit and push each affected repo separately
+  echo "$files" | while IFS= read -r file; do
+    git -C "$(dirname "$file")" rev-parse --show-toplevel 2>/dev/null
+  done | sort -u | while IFS= read -r repo; do
+    echo "→ committing in $repo"
+    git -C "$repo" commit -m "$msg" && git -C "$repo" push
+  done
 }

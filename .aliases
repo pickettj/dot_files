@@ -16,7 +16,7 @@ alias gs="bash ~/Projects/dot_files/grep_select.sh"
 alias gac="git add -A && git commit -m"
 ## Git add all, commit with failsafe message, and push
 alias fgit="git add -A && git commit -m 'failsafe: adding and committing all' && git push"
-## For gadd and gfzf (add file, commit, push) see .fzf_functions
+## For gadd, gfzf, and gfz (add file, commit, push) see .fzf_functions
 ## Run 'gith' for full git shortcut help
 
 alias pull_dir="proj && bash ./dot_files/git_pull_all_dirs.sh"
