@@ -161,11 +161,11 @@ gadd() {
   git commit -m "$msg" && git push
 }
 
-# Git add file via fzf picker (only modified files), commit with message, and push
+# Git add file(s) via fzf picker (only modified files), commit with message, and push
 gfzf() {
-  local file
-  file=$(git diff --name-only --diff-filter=M HEAD | fzf --preview 'git diff {}') || return
-  git add "$file"
+  local files
+  files=$(git diff --name-only --diff-filter=M HEAD | fzf -m --preview 'git diff {}') || return
+  echo "$files" | xargs git add
   read "msg?Commit message: "
   git commit -m "$msg" && git push
 }

@@ -14,11 +14,13 @@ alias gs="bash ~/Projects/dot_files/grep_select.sh"
 # Git
 ## Git add all, then commit
 alias gac="git add -A && git commit -m"
+## Git add all, commit with failsafe message, and push
+alias fgit="git add -A && git commit -m 'failsafe: adding and committing all' && git push"
+## For gadd and gfzf (add file, commit, push) see .fzf_functions
+## Run 'gith' for full git shortcut help
 
 alias pull_dir="proj && bash ./dot_files/git_pull_all_dirs.sh"
 alias mgs="proj && bash ./multi-git-status/mgitstatus"
-
-alias fgit="git add -A && git commit -m 'failsafe: adding and committing all' && git push"
 
 
 # Command Shortcuts
@@ -39,13 +41,12 @@ LANG=$DROP/Active_Directories/Language_Resources
 REF=$DROP/Active_Directories/Reference
 
 
-
 # Directory Jumps
-alias proj="$PROJ"
-alias teach="$TEACH"
-alias notes="$NOTES"
+alias proj="cd $PROJ"
+alias teach="cd $TEACH"
+alias notes="cd $NOTES"
 alias dot="cd $PROJ/dot_files"
-alias drop="$DROP"
+alias drop="cd $DROP"
 alias inbox="cd $INBOX"
 alias lang="cd $LANG"
 alias ref="cd $REF"
@@ -56,40 +57,24 @@ alias ref="cd $REF"
 alias bact="ssh root@bactriana.org"
 
 
-# Manually update Alfred settings
-# currently doesn't work; creates some __MACOSX folder
-#alias alf-up="rm -r $PROJ/Sync/Alfred.alfredpreferences && cp $NOTES/Digital_Humanities/Alfred.alfredpreferences.zip $PROJ/Sync && unzip $PROJ/Sync/Alfred.alfredpreferences.zip"
-
-
 ## Workflow: parse everything in markdown folder
 alias md_parse="python3 $PROJ/xml_development_eurasia/markdown_parser/markdown_parser_3.0.py"
 
-## Workflow: convert the latest tokenizing code from notebook to script and then run it"
+## Workflow: convert the latest tokenizing code from notebook to script and then run it
 alias tokenize_eur="cd $PROJ/eurasia_corpus_tool && jupyter nbconvert --to script text_cleaning_tokenizing.ipynb && python3 text_cleaning_tokenizing.py"
 
 
 ## Open most recently downloaded item
-### The bits between parentheses are glob qualifiers:
-#### om changes the order on globs to use the modification time rather than the name (newest first).
-#### [1] means to use only the first match.
 alias firstin="open $INBOX/*(om[1])"
 alias inpdf="open $INBOX/*.pdf(om[1])"
 
 
 # Quick App Opens
-
 alias read_view="cd $PROJ/dot_files && bash reading_view_transform.sh"
-
-alias tool="cd $PROJ/eurasia_corpus_tool && ipython3 -i -c'import text_deciphering_tool  as td'"
-
+alias tool="cd $PROJ/eurasia_corpus_tool && ipython3 -i -c'import text_deciphering_tool as td'"
 alias pahtool="cd $PROJ/pahlavi_digital_projects && ipython -i import_pahlavi_tool as pt"
-
 alias dige="open $NOTES/Digital_Humanities/database_digital_eurasia_6.1.fmp12"
-
 alias pahdic="open $NOTES/Digital_Humanities/pahlavi_dictionary.fmp12"
-
 alias jyp="jupyter notebook --notebook-dir='$PROJ/jupyter_notebooks'"
-
 alias corpus="jupyter notebook --notebook-dir='$PROJ/eurasia_corpus_tool'"
-
-alias fuz="cd $PROJ/fuzzy && python3 server.py --tag "@" --sep --path $PROJ/dot_files/fuzzy_files"
+alias fuz="cd $PROJ/fuzzy && python3 server.py --tag '@' --sep --path $PROJ/dot_files/fuzzy_files"
