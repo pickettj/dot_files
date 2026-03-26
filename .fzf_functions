@@ -21,7 +21,7 @@ alias fzh='echo "$FZHELP"'
 FZHELP=' fd: recursive change directory\n fdw: change to working directory\n fo: open file\n fow: open file from working directory\n fmd: read file inline in MarkDown\n fa: recursively open file in atom\n fmw: move file recursively to working directory\n fmr: move file recursively within directory\n fmk: move file to common Kitob Khona directory\n fzc: search within file content recursively\n ftf: create and open new file in working directory\n fh: command line history\n fsl: create symlink to file or folder\n fsll: create symlink into current directory\n fcp: copy path of file or directory to clipboard'
 
 alias gith='echo "$GITHELP"'
-GITHELP=' gac "msg": git add all and commit\n fgit: git add all, commit with failsafe message, and push\n gadd <file>: git add specific file, commit, and push\n gfzf: pick modified file(s) in current repo via fzf, commit, and push\n gfz: pick modified file(s) across all repos under $PROJ via fzf, commit, and push'
+GITHELP=' gac "msg": git add all and commit\n fgit: git add all, commit with failsafe message, and push\n gadd <file>: git add specific file, commit, and push\n gfzf: pick modified/untracked file(s) in current repo via fzf, commit, and push\n gfz: pick modified/untracked file(s) across all repos under $PROJ via fzf, commit, and push'
 
 
 # Fuzzy Change Directory (only within directories situated recursively below current context)
@@ -62,11 +62,11 @@ fa() {
 }
 
 
-# Fuzzy read MarkDown file in MDLess
+# Fuzzy render MarkDown file in Glow (.md and .txt files from working dirs)
 fmd() {
   local file
-  file=$(find . -type f | fzf --preview 'cat {}') &&
-  mdless "$file"
+  file=$(find "${FZF_WORK_DIRS[@]}" -type f \( -name "*.md" -o -name "*.txt" \) | fzf --preview 'cat {}') &&
+  cat "$file" | glow -p -
 }
 
 
@@ -163,8 +163,6 @@ fh() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
 }
 
-## For gadd, gfzf, and gfz (add file, commit, push) see .fzf_functions
-## Run 'gith' for full git shortcut help
 
 # Git add specific file, commit with message, and push
 gadd() {
@@ -173,23 +171,24 @@ gadd() {
   git commit -m "$msg" && git push
 }
 
-# Git add file(s) via fzf picker (modified files in current repo), commit, and push
+# Git add file(s) via fzf picker (modified + untracked files in current repo), commit, and push
 gfzf() {
   local files
-  files=$(git diff --name-only --diff-filter=M HEAD | fzf -m --preview 'git diff {}') || return
+  files=$( (git diff --name-only --diff-filter=M HEAD; git ls-files --others --exclude-standard) | \
+    fzf -m --preview 'git diff HEAD -- {} 2>/dev/null || cat {}') || return
   echo "$files" | xargs git add
   read "msg?Commit message: "
   git commit -m "$msg" && git push
 }
 
-# Git add file(s) via fzf picker (modified files across all repos under $PROJ), commit, and push
+# Git add file(s) via fzf picker (modified + untracked files across all repos under $PROJ), commit, and push
 gfz() {
   local files
   files=$(find "$PROJ" -maxdepth 2 -name ".git" -type d | while IFS= read -r gitdir; do
     local repo="${gitdir%/.git}"
-    git -C "$repo" diff --name-only --diff-filter=M HEAD 2>/dev/null | \
-      sed "s|^|${repo}/|"
-  done | fzf -m --preview 'git diff HEAD -- {}') || return
+    git -C "$repo" diff --name-only --diff-filter=M HEAD 2>/dev/null | sed "s|^|${repo}/|"
+    git -C "$repo" ls-files --others --exclude-standard 2>/dev/null | sed "s|^|${repo}/|"
+  done | fzf -m --preview 'git diff HEAD -- {} 2>/dev/null || cat {}') || return
 
   # Add files, grouped by repo
   echo "$files" | while IFS= read -r file; do
