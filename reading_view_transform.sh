@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# Resolve paths relative to the script's own location,
+# not the working directory from which it is invoked.
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Parse flags
+GIT_AUTO=false
+for arg in "$@"; do
+    case "$arg" in
+        --git) GIT_AUTO=true ;;
+    esac
+done
+
 # Check if Java is installed
 if ! command -v java &> /dev/null; then
     echo "Java is not installed or not in your PATH. Please install Java first."
@@ -10,23 +22,42 @@ fi
 # Define the Dropbox location directly since we can't source aliases
 DROP="$HOME/Dropbox"
 
-# Use Fuzzy to find the target XML file
-file=$(find ../../Dropbox/Active_Directories/Notes/Primary_Sources -type f | fzf --preview 'cat {}' --delimiter / --with-nth -1)
+# Prompt user to select stylesheet mode
+echo "Select transformation type:"
+echo "  1) Standard transcription reading view"
+echo "  2) Translation parallel view"
+read -rp "Enter 1 or 2: " mode
+
+case "$mode" in
+    1)
+        xsl_dir="$SCRIPT_DIR/../xml_development_eurasia/xslt/persian_document_reading_view_basic.xsl"
+        suffix=""
+        ;;
+    2)
+        xsl_dir="$SCRIPT_DIR/../xml_development_eurasia/xslt/translation_document.xsl"
+        suffix="_trans"
+        ;;
+    *)
+        echo "Invalid selection. Please enter 1 or 2."
+        exit 1
+        ;;
+esac
+
+# Use fzf to find the target XML file
+file=$(find "$HOME/Dropbox/Active_Directories/Notes/Primary_Sources" -type f \
+    | fzf --preview 'cat {}' --delimiter / --with-nth -1)
 
 echo "$file"
 
-# Extract just the name of the file for output reading file purposes
+# Extract just the name of the file for output purposes
 name="${file%.xml}"
 name="${name##*/}"
 echo "$name"
 
-# Output file name
-output_name="${name}.xhtml"
-output_path="../xml_development_eurasia/reading_views/${output_name}"
+# Output file name: append _trans suffix if translation mode
+output_name="${name}${suffix}.xhtml"
+output_path="$SCRIPT_DIR/../bactriana/docs/sandbox/${output_name}"
 echo "$output_path"
-
-# XSLT Style Sheet source directory
-xsl_dir="../xml_development_eurasia/xslt/persian_document_reading_view_basic.xsl"
 
 # Saxon directory and JAR file location
 SAXON_DIR="$DROP/Sync/SaxonHE12-5J"
@@ -53,7 +84,7 @@ fi
 OUTPUT_DIR=$(dirname "$output_path")
 mkdir -p "$OUTPUT_DIR"
 
-# Run XSL transformation
+# Run XSLT transformation
 echo "Running XSLT transformation..."
 java -cp "$CLASSPATH" net.sf.saxon.Transform -s:"$file" -xsl:"$xsl_dir" -o:"$output_path"
 
@@ -66,14 +97,31 @@ else
     exit 1
 fi
 
-for file in input_directory/*.xml; do
-    filename=$(basename "$file")
-    outputname="${filename%.xml}.html"
-    
-    java -jar saxon-he-12.5.jar \
-        -s:"$file" \
-        -xsl:"path_to_XSLT_stylesheet" \
-        -o:"output_directory/$outputname"
-done
+# ── Git ──────────────────────────────────────────────────────────────
+default_msg="Add ${output_name}"
 
-
+if $GIT_AUTO; then
+    # --git flag: add, commit, push with default message, no prompts
+    cd "$SCRIPT_DIR/../bactriana" || exit 1
+    git add "docs/sandbox/${output_name}"
+    git commit -m "$default_msg"
+    git push
+    echo "Changes pushed successfully."
+else
+    # No flag: ask whether to push at all
+    echo ""
+    read -rp "Push to git? (y/n): " git_confirmation
+    if [[ $git_confirmation == "y" || $git_confirmation == "Y" ]]; then
+        read -rp "Custom commit message? Leave blank to use default ('${default_msg}'): " commit_message
+        if [ -z "$commit_message" ]; then
+            commit_message="$default_msg"
+        fi
+        cd "$SCRIPT_DIR/../bactriana" || exit 1
+        git add "docs/sandbox/${output_name}"
+        git commit -m "$commit_message"
+        git push
+        echo "Changes pushed successfully."
+    else
+        echo "Files created but not committed to git."
+    fi
+fi

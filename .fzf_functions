@@ -126,13 +126,13 @@ ftf() {
 }
 
 
-# Fuzzy Create Symlink (pick source from working dirs, pick destination dir)
+# Fuzzy Create Symlink (pick source from Dropbox + Projects, pick destination dir)
 fsl() {
   local src
-  src=$(find "${FZF_WORK_DIRS[@]}" \( -type f -o -type d \) | \
-    fzf --prompt="Symlink source: " --preview 'ls -la {}') || return
+  src=$(find "$DROPBOX" "$PROJ" \( -type f -o -type d \) 2>/dev/null | \
+    fzf --prompt="Symlink source: ") || return
   local dest_dir
-  dest_dir=$(find "${FZF_WORK_DIRS[@]}" -type d | \
+  dest_dir=$(find "$DROPBOX" "$PROJ" -type d 2>/dev/null | \
     fzf --prompt="Symlink destination dir: ") || return
   ln -s "$src" "${dest_dir}/$(basename "$src")" &&
   echo "✓ Symlink created: ${dest_dir}/$(basename "$src") → $src"
@@ -141,8 +141,8 @@ fsl() {
 # Fuzzy Create Symlink into current directory (faster, single selection)
 fsll() {
   local src
-  src=$(find "${FZF_WORK_DIRS[@]}" \( -type f -o -type d \) | \
-    fzf --prompt="Symlink source: " --preview 'ls -la {}') || return
+  src=$(find "$DROPBOX" "$PROJ" \( -type f -o -type d \) 2>/dev/null | \
+    fzf --prompt="Symlink source: ") || return
   ln -s "$src" "$(basename "$src")" &&
   echo "✓ Symlink: ./$(basename "$src") → $src"
 }
