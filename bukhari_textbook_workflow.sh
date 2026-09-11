@@ -161,24 +161,73 @@ if [ ! -f "$xhtml_output" ] || [ ! -s "$xhtml_output" ]; then
     echo "Created basic HTML version as fallback."
 fi
 
-# Create PDF using Pandoc and BasicTeX
-echo "Creating PDF using Pandoc and BasicTeX..."
+# Create PDF using WeasyPrint (renders the same HTML+CSS as the browser,
+# so Arabic script and RTL/bidi are handled correctly — unlike pandoc+xelatex,
+# which ignores CSS and falls back to a Latin-only font).
+echo "Creating PDF using WeasyPrint..."
 pdf_out="$pdf_output"
 
-# Check if pandoc is installed
-if ! command -v pandoc >/dev/null 2>&1; then
-    echo "pandoc not found. Please install pandoc."
+# Check if weasyprint is installed
+if ! command -v weasyprint >/dev/null 2>&1; then
+    echo "Error: weasyprint not found."
+    echo "Install it with:  pip3 install weasyprint   (or: brew install weasyprint)"
+    echo "For best-looking Arabic, also install the Amiri font:  brew install --cask font-amiri"
     exit 1
 fi
 
-# Check if pdflatex is installed
-if ! command -v pdflatex >/dev/null 2>&1; then
-    echo "pdflatex not found. Please install a LaTeX distribution (e.g., TeX Live or MiKTeX)."
-    exit 1
-fi
+# Supplemental print stylesheet: guarantees an Arabic-capable font even if the
+# document's own CSS doesn't specify one. Falls back through Amiri (if installed)
+# to fonts that ship with macOS (Geeza Pro), so it renders out of the box.
+pdf_css="${output_dir}/bukhari_pdf.css"
+cat > "$pdf_css" << 'EOF'
+/* Ensure every element can draw Arabic glyphs; Pango does per-glyph fallback,
+   but naming Arabic-capable families explicitly avoids tofu/blank boxes. */
+body, p, div, span, li, h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, "Helvetica Neue", Arial,
+                 "Amiri", "Scheherazade New", "Geeza Pro", "Noto Naskh Arabic", serif;
+}
+.arabic, .bukh, .fars {
+    font-family: "Amiri", "Scheherazade New", "Geeza Pro", "Noto Naskh Arabic", serif;
+}
+@page { margin: 2.5cm; size: letter; }
 
-# Convert XHTML to PDF using Pandoc
-pandoc "$xhtml_output" -o "$pdf_out" --pdf-engine=xelatex --css="$css_file"
+/* --- Black & white PDF overrides ---
+   These are USER-origin !important rules, so they beat the document's own
+   (author) colors without editing bukhari_textbook.css. */
+
+/* All text to black, no colored backgrounds. */
+* {
+    color: #000 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+body { background: #fff !important; }
+
+/* Structural rules/borders in gray so layout stays legible in mono. */
+.commentary { border-left: 2px solid #999 !important; }
+hr, table, th, td { border-color: #999 !important; }
+
+/* Links: black, no color; keep them readable in print. */
+a, a:link, a:visited { color: #000 !important; text-decoration: underline !important; }
+
+/* Grammatical emphasis: convey without color — bold instead of a highlight. */
+.gram_emph {
+    color: #000 !important;
+    background: transparent !important;
+    font-weight: bold !important;
+}
+/* Note: WeasyPrint has no CSS `filter`, so images can't be grayscaled in CSS.
+   If you add color images later, convert them to grayscale before embedding. */
+EOF
+
+# Convert XHTML to PDF.
+#  -e utf-8 : force UTF-8. The XSLT output declares UTF-8 only in the XML prolog
+#             and has no <meta charset> in <head>; without this flag WeasyPrint
+#             defaults to Latin-1 and mangles ALL non-ASCII (Arabic + Cyrillic)
+#             into mojibake. This is the actual cause of the missing Arabic.
+#  -s       : append our Arabic-font stylesheet on top of the document's own CSS
+#             (which WeasyPrint auto-resolves from the <link> relative to the file).
+weasyprint "$xhtml_output" "$pdf_out" -e utf-8 -s "$pdf_css"
 
 # Check if PDF creation was successful
 if [ -f "$pdf_out" ] && [ -s "$pdf_out" ]; then
